@@ -7,27 +7,43 @@
   const $$ = (sel, ctx = document) => Array.from(ctx.querySelectorAll(sel));
   const readJSON = (el, attr) => { try { return JSON.parse(el.getAttribute(attr)); } catch (e) { return null; } };
 
-  /* Configuración: agenda, correo, LinkedIn */
+  /* Configuración: agenda, correo, LinkedIn.
+     Solo se aceptan enlaces https: y un correo con formato simple, para que un valor
+     mal escrito (o un "javascript:") nunca termine en un href. */
+  const safeHttps = (value) => {
+    if (typeof value !== 'string' || !value.trim()) return '';
+    try {
+      const u = new URL(value.trim());
+      return u.protocol === 'https:' ? u.href : '';
+    } catch (e) { return ''; }
+  };
+  const safeEmail = (value) => {
+    const v = typeof value === 'string' ? value.trim() : '';
+    return /^[A-Za-z0-9._%+-]{1,64}@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)*\.[A-Za-z]{2,}$/.test(v) && v.length <= 254 ? v : '';
+  };
+  const bookingUrl = safeHttps(cfg.bookingUrl);
+  const linkedinUrl = safeHttps(cfg.linkedinUrl);
+  const email = safeEmail(cfg.email);
   $$('[data-booking]').forEach((a) => {
-    if (cfg.bookingUrl) {
-      a.href = cfg.bookingUrl;
+    if (bookingUrl) {
+      a.href = bookingUrl;
       a.target = '_blank';
-      a.rel = 'noopener';
+      a.rel = 'noopener noreferrer';
     }
   });
   $$('[data-email]').forEach((el) => {
-    if (cfg.email) {
+    if (email) {
       el.hidden = false;
-      $$('a', el).concat(el.tagName === 'A' ? [el] : []).forEach((a) => { a.href = `mailto:${cfg.email}`; a.textContent = cfg.email; });
+      $$('a', el).concat(el.tagName === 'A' ? [el] : []).forEach((a) => { a.href = `mailto:${email}`; a.textContent = email; });
     } else {
       el.hidden = true;
     }
   });
   $$('[data-linkedin]').forEach((el) => {
-    if (cfg.linkedinUrl) {
+    if (linkedinUrl) {
       el.hidden = false;
       const a = el.tagName === 'A' ? el : $('a', el);
-      if (a) { a.href = cfg.linkedinUrl; a.target = '_blank'; a.rel = 'noopener'; }
+      if (a) { a.href = linkedinUrl; a.target = '_blank'; a.rel = 'noopener noreferrer'; }
     } else {
       el.hidden = true;
     }
@@ -229,12 +245,38 @@
       status.className = `form-status is-${type}`;
       status.textContent = text;
     };
+    /* ?interes= solo marca una casilla existente; el valor nunca entra a un selector ni al DOM */
     const params = new URLSearchParams(window.location.search);
     const preset = params.get('interes') || params.get('interest');
     if (preset) {
-      const chip = form.querySelector(`input[name="interest"][value="${CSS.escape(preset)}"]`);
+      const chip = $$('input[name="interest"]', form).find((c) => c.value === preset);
       if (chip) chip.checked = true;
     }
+
+    /* Límites contra abuso. Son solo disuasivos en el navegador: el filtro de spam y el
+       límite real de envíos los aplica Web3Forms. */
+    const MIN_FILL_MS = 3000;      /* envíos más rápidos que esto casi siempre son bots */
+    const COOLDOWN_MS = 60000;     /* espera después de un envío correcto */
+    const COOLDOWN_KEY = 'jimjo:lastSent';
+    const readyAt = performance.now();
+    let sending = false;
+    const lastSent = () => {
+      try { return Number(window.sessionStorage.getItem(COOLDOWN_KEY)) || 0; } catch (e) { return 0; }
+    };
+    const markSent = () => {
+      try { window.sessionStorage.setItem(COOLDOWN_KEY, String(Date.now())); } catch (e) { /* sin almacenamiento */ }
+    };
+    let memSent = 0; /* respaldo si sessionStorage no está disponible */
+    const inCooldown = () => Date.now() - Math.max(lastSent(), memSent) < COOLDOWN_MS;
+    const trimFields = () => {
+      $$('input[type="text"], input[type="email"], input[type="tel"], textarea', form).forEach((f) => {
+        const max = Number(f.getAttribute('maxlength')) || 0;
+        let v = f.value.trim();
+        if (max && v.length > max) v = v.slice(0, max);
+        if (v !== f.value) f.value = v;
+      });
+    };
+
     const validate = () => {
       let firstBad = null;
       $$('input[required], select[required], textarea[required]', form).forEach((field) => {
@@ -258,9 +300,15 @@
     });
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
+      if (sending) return;
+      trimFields();
       if (!validate()) { show('error', msg('msgInvalid')); return; }
-      if (form.querySelector('[name="botcheck"]').checked) return;
+      const trap = form.querySelector('[name="botcheck"]');
+      if (trap && trap.checked) return;
+      if (performance.now() - readyAt < MIN_FILL_MS || inCooldown()) { show('info', msg('msgWait')); return; }
       if (!cfg.web3formsKey) { show('info', msg('msgDemo')); return; }
+      sending = true;
+      btn.disabled = true;
       const data = new FormData(form);
       data.append('access_key', cfg.web3formsKey);
       data.append('subject', `${msg('subject')} — ${data.get('company') || data.get('name')}`);
@@ -278,6 +326,8 @@
         });
         const json = await res.json().catch(() => ({}));
         if (res.ok && json.success !== false) {
+          memSent = Date.now();
+          markSent();
           form.reset();
           show('ok', msg('msgOk'));
         } else {
@@ -286,6 +336,8 @@
       } catch (err) {
         show('error', msg('msgError'));
       } finally {
+        sending = false;
+        btn.disabled = false;
         btn.removeAttribute('aria-busy');
       }
     });

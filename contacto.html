@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contacto: agenda tu diagnóstico · JimjoAI</title>
   <meta name="description" content="Cuéntame qué tarea le quita tiempo a tu equipo. Una llamada de 30 minutos, sin compromiso, en español o en inglés, para ver qué se puede automatizar.">
   <link rel="canonical" href="https://jengaup.github.io/Jimjoai/contacto.html">
@@ -92,28 +94,29 @@
               data-msg-ok="¡Gracias! Recibí tu mensaje. Te escribo por correo para coordinar la llamada."
               data-msg-error="No se pudo enviar el mensaje. Revisa tu conexión e inténtalo de nuevo en unos minutos."
               data-msg-demo="El formulario funciona, pero el envío todavía no está conectado, así que este mensaje no llegó. Inténtalo de nuevo más adelante."
+              data-msg-wait="Espera unos segundos y vuelve a intentarlo. Si ya enviaste tu mensaje, no hace falta mandarlo otra vez."
               data-msg-invalid="Revisa los campos marcados para poder enviar tu mensaje.">
           <h2 class="title-md">Solicita tu diagnóstico</h2>
           <p class="form-intro">Los campos marcados como opcionales puedes dejarlos en blanco.</p>
           <div class="form-grid">
             <div class="field">
               <label for="name">Nombre</label>
-              <input type="text" id="name" name="name" autocomplete="name" required data-error="Escribe tu nombre." aria-describedby="name-error">
+              <input type="text" id="name" name="name" maxlength="100" autocomplete="name" required data-error="Escribe tu nombre." aria-describedby="name-error">
               <span class="field-error" id="name-error" aria-live="polite"></span>
             </div>
             <div class="field">
               <label for="company">Negocio o empresa</label>
-              <input type="text" id="company" name="company" autocomplete="organization" required data-error="Escribe el nombre de tu negocio o empresa." aria-describedby="company-error">
+              <input type="text" id="company" name="company" maxlength="120" autocomplete="organization" required data-error="Escribe el nombre de tu negocio o empresa." aria-describedby="company-error">
               <span class="field-error" id="company-error" aria-live="polite"></span>
             </div>
             <div class="field">
               <label for="email">Correo electrónico</label>
-              <input type="email" id="email" name="email" autocomplete="email" required data-error="Escribe un correo válido, por ejemplo nombre@negocio.com." aria-describedby="email-error">
+              <input type="email" id="email" name="email" maxlength="254" autocomplete="email" required data-error="Escribe un correo válido, por ejemplo nombre@negocio.com." aria-describedby="email-error">
               <span class="field-error" id="email-error" aria-live="polite"></span>
             </div>
             <div class="field">
               <label for="phone">Teléfono <span class="opt">(opcional)</span></label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel">
+              <input type="tel" id="phone" name="phone" maxlength="30" autocomplete="tel">
             </div>
             <fieldset class="chips-field field full">
               <legend>¿Qué te interesa? <span class="opt">(puedes marcar varias)</span></legend>
@@ -126,7 +129,7 @@
             </fieldset>
             <div class="field full">
               <label for="message">¿Qué te gustaría resolver?</label>
-              <textarea id="message" name="message" rows="5" required data-error="Cuéntame en pocas palabras qué te gustaría resolver." aria-describedby="message-error" placeholder="Por ejemplo: damos seguimiento a cada estimado a mano y se nos escapan clientes."></textarea>
+              <textarea id="message" name="message" maxlength="3000" rows="5" required data-error="Cuéntame en pocas palabras qué te gustaría resolver." aria-describedby="message-error" placeholder="Por ejemplo: damos seguimiento a cada estimado a mano y se nos escapan clientes."></textarea>
               <span class="field-error" id="message-error" aria-live="polite"></span>
             </div>
           </div>

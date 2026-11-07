@@ -2,7 +2,10 @@
 
 Run: python3 -m unittest discover -s tests -v
 """
+import base64
+import hashlib
 import os
+import re
 import unittest
 from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
@@ -222,6 +225,146 @@ class SiteTests(unittest.TestCase):
                 for field in ("name", "email", "message", "botcheck"):
                     self.assertIn(field, names, f"{page}: form missing field {field!r}")
         self.assertEqual(missing, [], "Missing contact pages: " + ", ".join(missing))
+
+
+def read(rel):
+    with open(os.path.join(ROOT, rel), encoding="utf-8") as fh:
+        return fh.read()
+
+
+class SecurityParser(HTMLParser):
+    """Collects what the security checks need: CSP, inline scripts, handlers, links, fields."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.csp = None
+        self.referrer = None
+        self.inline_scripts = []
+        self.handlers = []
+        self.blank_links = []  # (href, rel)
+        self.fields = []  # (tag, type, name, maxlength)
+        self._script = None
+
+    def handle_starttag(self, tag, attrs):
+        a = {k.lower(): (v or "") for k, v in attrs}
+        for k in a:
+            if k.startswith("on"):
+                self.handlers.append(f"<{tag} {k}>")
+        if tag == "meta":
+            if a.get("http-equiv", "").lower() == "content-security-policy":
+                self.csp = a.get("content", "")
+            if a.get("name", "").lower() == "referrer":
+                self.referrer = a.get("content", "")
+        elif tag == "script" and "src" not in a:
+            if a.get("type", "").lower() not in ("application/ld+json",):
+                self._script = []
+        elif tag == "a" and a.get("target", "").lower() == "_blank":
+            self.blank_links.append((a.get("href", ""), a.get("rel", "")))
+        elif tag in ("input", "textarea"):
+            self.fields.append((tag, a.get("type", "text").lower(), a.get("name", ""), a.get("maxlength")))
+
+    def handle_data(self, data):
+        if self._script is not None:
+            self._script.append(data)
+
+    def handle_endtag(self, tag):
+        if tag == "script" and self._script is not None:
+            self.inline_scripts.append("".join(self._script))
+            self._script = None
+
+
+def security(rel):
+    p = SecurityParser()
+    p.feed(read(rel))
+    p.close()
+    return p
+
+
+def csp_directives(csp):
+    out = {}
+    for part in csp.split(";"):
+        bits = part.split()
+        if bits:
+            out[bits[0].lower()] = bits[1:]
+    return out
+
+
+MAXLENGTHS = {"name": 100, "company": 120, "email": 254, "phone": 30, "message": 3000}
+
+
+class SecurityTests(unittest.TestCase):
+    def setUp(self):
+        self.pages = html_files()
+
+    def test_csp_meta_present_and_strict(self):
+        for page in self.pages:
+            with self.subTest(page=page):
+                p = security(page)
+                self.assertTrue(p.csp, f"{page}: missing Content-Security-Policy meta")
+                d = csp_directives(p.csp)
+                self.assertEqual(d.get("object-src"), ["'none'"], f"{page}: object-src must be 'none'")
+                self.assertEqual(d.get("default-src"), ["'self'"], f"{page}: default-src must be 'self'")
+                self.assertEqual(d.get("base-uri"), ["'self'"], f"{page}: base-uri must be 'self'")
+                script_src = d.get("script-src", [])
+                self.assertNotIn("'unsafe-inline'", script_src, f"{page}: script-src allows unsafe-inline")
+                self.assertNotIn("'unsafe-eval'", script_src, f"{page}: script-src allows unsafe-eval")
+                self.assertIn("https://api.web3forms.com", d.get("connect-src", []))
+                self.assertIn("https://api.web3forms.com", d.get("form-action", []))
+                self.assertEqual(p.referrer, "strict-origin-when-cross-origin", f"{page}: referrer meta")
+
+    def test_csp_hashes_match_inline_scripts(self):
+        for page in self.pages:
+            with self.subTest(page=page):
+                p = security(page)
+                allowed = set(re.findall(r"'(sha256-[A-Za-z0-9+/=]+)'", p.csp or ""))
+                self.assertTrue(p.inline_scripts, f"{page}: expected the inline js-class script")
+                for code in p.inline_scripts:
+                    digest = base64.b64encode(hashlib.sha256(code.encode("utf-8")).digest()).decode()
+                    self.assertIn(f"sha256-{digest}", allowed, f"{page}: inline script not allowed by CSP hash: {code!r}")
+
+    def test_no_inline_event_handlers(self):
+        for page in self.pages:
+            with self.subTest(page=page):
+                self.assertEqual(security(page).handlers, [], f"{page}: inline on* handler attributes")
+
+    def test_no_javascript_urls(self):
+        for page in self.pages:
+            with self.subTest(page=page):
+                bad = [v for _, v in parse(page).refs if v.strip().lower().startswith("javascript:")]
+                self.assertEqual(bad, [], f"{page}: javascript: URLs")
+
+    def test_target_blank_has_noopener(self):
+        for page in self.pages:
+            with self.subTest(page=page):
+                bad = [href for href, rel in security(page).blank_links
+                       if not {"noopener", "noreferrer"} <= set(rel.lower().split())]
+                self.assertEqual(bad, [], f"{page}: target=_blank without rel=noopener noreferrer")
+
+    def test_site_js_sets_noopener(self):
+        js = read("assets/js/site.js")
+        self.assertNotRegex(js, r"rel\s*=\s*'noopener'", "site.js sets rel without noreferrer")
+        for sink in ("innerHTML", "outerHTML", "insertAdjacentHTML", "eval(", "new Function", "document.write"):
+            self.assertNotIn(sink, js, f"site.js uses {sink}")
+
+    def test_form_fields_have_maxlength(self):
+        for page in CONTACT_PAGES:
+            with self.subTest(page=page):
+                seen = {}
+                for tag, typ, name, maxlength in security(page).fields:
+                    if tag == "textarea" or typ in ("text", "email", "tel", "url", "search"):
+                        self.assertTrue(maxlength, f"{page}: field {name!r} has no maxlength")
+                        seen[name] = int(maxlength)
+                for name, expected in MAXLENGTHS.items():
+                    self.assertEqual(seen.get(name), expected, f"{page}: maxlength of {name!r}")
+
+    def test_contact_forms_have_wait_message(self):
+        for page in CONTACT_PAGES:
+            with self.subTest(page=page):
+                self.assertIn("data-msg-wait=", read(page), f"{page}: missing data-msg-wait copy")
+
+    def test_no_secrets_in_config(self):
+        cfg = read("assets/js/config.js")
+        self.assertNotRegex(cfg, r"(?i)(secret|password|private|token)\s*:", "config.js looks like it holds a secret")
 
 
 if __name__ == "__main__":

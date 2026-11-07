@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contact: book your assessment · JimjoAI</title>
   <meta name="description" content="Tell me which task is eating up your team’s time. A 30-minute call, no commitment, in English or Spanish, to see what can be automated.">
   <link rel="canonical" href="https://jengaup.github.io/Jimjoai/en/contact.html">
@@ -93,28 +95,29 @@
               data-msg-ok="Thank you! I got your message. I’ll email you to set up the call."
               data-msg-error="Your message couldn’t be sent. Check your connection and try again in a few minutes."
               data-msg-demo="The form works, but sending isn’t connected yet, so this message didn’t go through. Please try again later."
+              data-msg-wait="Please wait a few seconds and try again. If you already sent your message, there’s no need to send it again."
               data-msg-invalid="Please check the highlighted fields so you can send your message.">
           <h2 class="title-md">Request your assessment</h2>
           <p class="form-intro">You can leave fields marked as optional blank.</p>
           <div class="form-grid">
             <div class="field">
               <label for="name">Name</label>
-              <input type="text" id="name" name="name" autocomplete="name" required data-error="Please enter your name." aria-describedby="name-error">
+              <input type="text" id="name" name="name" maxlength="100" autocomplete="name" required data-error="Please enter your name." aria-describedby="name-error">
               <span class="field-error" id="name-error" aria-live="polite"></span>
             </div>
             <div class="field">
               <label for="company">Business or company</label>
-              <input type="text" id="company" name="company" autocomplete="organization" required data-error="Please enter the name of your business or company." aria-describedby="company-error">
+              <input type="text" id="company" name="company" maxlength="120" autocomplete="organization" required data-error="Please enter the name of your business or company." aria-describedby="company-error">
               <span class="field-error" id="company-error" aria-live="polite"></span>
             </div>
             <div class="field">
               <label for="email">Email</label>
-              <input type="email" id="email" name="email" autocomplete="email" required data-error="Please enter a valid email, for example name@business.com." aria-describedby="email-error">
+              <input type="email" id="email" name="email" maxlength="254" autocomplete="email" required data-error="Please enter a valid email, for example name@business.com." aria-describedby="email-error">
               <span class="field-error" id="email-error" aria-live="polite"></span>
             </div>
             <div class="field">
               <label for="phone">Phone <span class="opt">(optional)</span></label>
-              <input type="tel" id="phone" name="phone" autocomplete="tel">
+              <input type="tel" id="phone" name="phone" maxlength="30" autocomplete="tel">
             </div>
             <fieldset class="chips-field field full">
               <legend>What are you interested in? <span class="opt">(pick as many as you like)</span></legend>
@@ -127,7 +130,7 @@
             </fieldset>
             <div class="field full">
               <label for="message">What would you like to solve?</label>
-              <textarea id="message" name="message" rows="5" required data-error="Tell me in a few words what you’d like to solve." aria-describedby="message-error" placeholder="For example: we follow up on every estimate by hand and clients slip through the cracks."></textarea>
+              <textarea id="message" name="message" maxlength="3000" rows="5" required data-error="Tell me in a few words what you’d like to solve." aria-describedby="message-error" placeholder="For example: we follow up on every estimate by hand and clients slip through the cracks."></textarea>
               <span class="field-error" id="message-error" aria-live="polite"></span>
             </div>
           </div>
