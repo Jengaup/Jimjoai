@@ -65,6 +65,10 @@
       document.body.classList.toggle('menu-open', open);
       const labels = readJSON(toggle, 'data-labels');
       if (labels) toggle.setAttribute('aria-label', open ? labels[1] : labels[0]);
+      /* Con el menú abierto, el contenido de atrás no recibe foco */
+      Array.from(document.body.children).forEach((el) => {
+        if (el !== header && el.tagName !== 'SCRIPT') el.inert = open;
+      });
     };
     toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
     $$('a', menu).forEach((a) => a.addEventListener('click', () => setOpen(false)));
