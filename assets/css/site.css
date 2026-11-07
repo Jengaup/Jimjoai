@@ -472,7 +472,8 @@ p { margin: 0; }
 .page-index { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 32px; }
 .page-index .tag { padding: 8px 12px; background: var(--card); text-decoration: none; transition: border-color .2s, background .2s; }
 .page-index .tag:hover { border-color: var(--ink); background: var(--volt); }
-.service { padding: clamp(40px, 6vw, 72px) 0; border-top: 1px solid var(--line); scroll-margin-top: 80px; }
+.service { padding: clamp(40px, 6vw, 72px) 0; border-top: 1px solid var(--line); }
+main [id] { scroll-margin-top: 88px; }
 .service:first-child { padding-top: 0; border-top: 0; }
 .service-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr); gap: clamp(28px, 5vw, 64px); align-items: start; }
 .service-top { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
@@ -498,7 +499,10 @@ p { margin: 0; }
 .section-dark .ba-card:hover { border-color: var(--night-line); }
 .steps-detailed .check-list { gap: 6px; margin-top: 14px; font-size: .9rem; }
 .contact-points li[hidden] { display: none; }
+.chips-field { position: relative; }
+.field.chips-field input { width: 1px; height: 1px; min-height: 0; padding: 0; border: 0; }
 .contact-direct { margin-top: 24px; }
+.form-grid .field { align-content: start; }
 .contact-hero h1 { font-size: clamp(2.4rem, 5vw, 4.4rem); }
 .form-card .title-md + .form-intro { margin: 8px 0 24px; color: var(--muted); font-size: .9rem; }
 .privacy { padding-top: 0; }
