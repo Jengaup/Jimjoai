@@ -67,20 +67,24 @@ window.JIMJO_CONFIG = {
 1. Haz merge de los cambios a la rama `main`.
 2. En GitHub ve a **Settings → Pages**.
 3. En **Source** escoge **Deploy from a branch**, rama `main` y carpeta `/ (root)`. Guarda.
-4. En uno o dos minutos el sitio queda en https://jengaup.github.io/Jimjoai/
+4. En **Custom domain** escribe `ai.josealbertopr.com` y guarda. El archivo `CNAME` del repo ya tiene ese dominio.
+5. Cuando GitHub termine de verificar, marca **Enforce HTTPS**.
 
 El archivo `.nojekyll` le indica a GitHub que sirva los archivos tal cual.
 
-## Usar un dominio propio más adelante
+## Dominio en Cloudflare
 
-1. Configura el dominio en **Settings → Pages → Custom domain** y en tu proveedor de dominio.
-2. Reemplaza `https://jengaup.github.io/Jimjoai/` por tu dominio nuevo en:
-   - las etiquetas `canonical`, `hreflang` y `og:` de cada página,
-   - los datos estructurados (JSON-LD) de las páginas de inicio,
-   - `sitemap.xml` y `robots.txt`.
-3. En `404.html`, las rutas que empiezan con `/Jimjoai/` pasan a empezar con `/`.
+En Cloudflare, dentro de `josealbertopr.com`, ve a **DNS → Records → Add record**:
 
-Un buscar y reemplazar en todo el proyecto resuelve casi todo.
+| Tipo | Nombre | Contenido | Proxy |
+|---|---|---|---|
+| CNAME | `ai` | `jengaup.github.io` | DNS only (nube gris) |
+
+Deja la nube gris hasta que GitHub emita el certificado HTTPS. Si luego quieres activar el proxy (nube naranja), pon **SSL/TLS** en **Full (strict)**.
+
+Opcional: verifica el dominio en GitHub (**Settings de tu cuenta → Pages → Add a domain**) para que nadie más pueda usarlo. GitHub te da un registro TXT para añadir en Cloudflare.
+
+Las URL del sitio (canonical, hreflang, sitemap, og) ya apuntan a `https://ai.josealbertopr.com/`. Si cambias de dominio, busca y reemplaza esa dirección en todo el proyecto.
 
 ## Pruebas
 

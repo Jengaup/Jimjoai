@@ -208,31 +208,103 @@
     }
   }
 
-  /* Diagnóstico rápido */
+  /* Autoevaluación por tipo de negocio */
+  const QUIZ = window.JIMJO_QUIZ || null;
+  const lang = (root.lang || 'es').slice(0, 2) === 'en' ? 'en' : 'es';
+  const quizCopy = QUIZ ? QUIZ[lang] : null;
   const quiz = $('[data-quiz]');
-  if (quiz) {
-    const copy = readJSON(quiz, 'data-quiz') || {};
-    const boxes = $$('input[type="checkbox"]', quiz);
+  if (quiz && quizCopy) {
+    const picker = $('[data-quiz-industries]', quiz);
+    const list = $('[data-quiz-options]', quiz);
     const meter = $('.meter i', quiz);
     const title = $('[data-quiz-title]', quiz);
     const text = $('[data-quiz-text]', quiz);
     const count = $('[data-quiz-count]', quiz);
+    const recsBox = $('[data-quiz-recs]', quiz);
+    const recsList = $('ul', recsBox);
+    const cta = $('[data-quiz-cta]', quiz);
+    const ctaBase = cta ? cta.getAttribute('href').split('?')[0] : '';
+    const makeCheck = () => {
+      const ns = 'http://www.w3.org/2000/svg';
+      const svg = document.createElementNS(ns, 'svg');
+      [['viewBox', '0 0 24 24'], ['fill', 'none'], ['stroke', 'currentColor'], ['stroke-width', '3.2'], ['aria-hidden', 'true']]
+        .forEach(([k, v]) => svg.setAttribute(k, v));
+      const path = document.createElementNS(ns, 'path');
+      path.setAttribute('d', 'm6 12 4 4 8-8');
+      svg.appendChild(path);
+      return svg;
+    };
+    let industry = quizCopy.industries.find((i) => i.key === 'general') || quizCopy.industries[0];
+
     const update = () => {
+      const boxes = $$('input[type="checkbox"]', list);
       const checked = boxes.filter((b) => b.checked);
       const n = checked.length;
-      const pct = Math.round((n / boxes.length) * 100);
+      const pct = boxes.length ? Math.round((n / boxes.length) * 100) : 0;
       if (meter) meter.style.width = `${Math.max(n ? 8 : 0, pct)}%`;
-      if (count) count.textContent = (copy.count || '{n}/{t}').replace('{n}', n).replace('{t}', boxes.length);
+      if (count) count.textContent = quizCopy.count.replace('{n}', n).replace('{t}', boxes.length);
       const band = n === 0 ? 'none' : n <= 2 ? 'low' : n <= 4 ? 'mid' : 'high';
-      const tally = {};
-      checked.forEach((b) => { tally[b.dataset.area] = (tally[b.dataset.area] || 0) + 1; });
-      const top = Object.keys(tally).sort((a, b) => tally[b] - tally[a])[0];
-      const bandCopy = (copy.bands || {})[band] || {};
-      if (title) title.textContent = bandCopy.title || '';
-      if (text) text.textContent = n && copy.areas && copy.areas[top] ? `${bandCopy.text} ${copy.areas[top]}` : (bandCopy.text || '');
+      title.textContent = quizCopy.bands[band].title;
+      text.textContent = quizCopy.bands[band].text;
+      const picked = checked.map((b) => industry.signals[Number(b.value)]);
+      recsList.replaceChildren(...picked.slice(0, 3).map((sig) => {
+        const li = document.createElement('li');
+        li.textContent = sig.r;
+        return li;
+      }));
+      recsBox.hidden = n === 0;
+      if (cta) {
+        const tally = {};
+        picked.forEach((sig) => { tally[sig.a] = (tally[sig.a] || 0) + 1; });
+        const top = Object.keys(tally).sort((x, y) => tally[y] - tally[x])[0];
+        const q = new URLSearchParams();
+        if (top && QUIZ.areaToInterest[top]) q.set('interes', QUIZ.areaToInterest[top]);
+        q.set('negocio', industry.key);
+        if (n) q.set('senales', checked.map((b) => b.value).join('.'));
+        cta.setAttribute('href', `${ctaBase}?${q.toString()}`);
+      }
     };
-    boxes.forEach((b) => b.addEventListener('change', update));
-    update();
+
+    const renderSignals = (animate) => {
+      const items = industry.signals.map((sig, i) => {
+        const wrap = document.createElement('div');
+        wrap.className = 'quiz-option';
+        if (animate) { wrap.classList.add('is-entering'); wrap.style.setProperty('--i', i); }
+        const input = document.createElement('input');
+        input.type = 'checkbox';
+        input.id = `q-${industry.key}-${i}`;
+        input.value = String(i);
+        input.addEventListener('change', update);
+        const label = document.createElement('label');
+        label.htmlFor = input.id;
+        const box = document.createElement('span');
+        box.className = 'box';
+        box.appendChild(makeCheck());
+        label.append(box, document.createTextNode(sig.t));
+        wrap.append(input, label);
+        return wrap;
+      });
+      list.replaceChildren(...items);
+      update();
+    };
+
+    quizCopy.industries.forEach((ind) => {
+      const input = document.createElement('input');
+      input.type = 'radio';
+      input.name = 'quiz-industry';
+      input.id = `qi-${ind.key}`;
+      input.value = ind.key;
+      input.checked = ind === industry;
+      input.addEventListener('change', () => {
+        industry = ind;
+        renderSignals(!reduceMotion);
+      });
+      const label = document.createElement('label');
+      label.htmlFor = input.id;
+      label.textContent = ind.label;
+      picker.append(input, label);
+    });
+    renderSignals(false);
   }
 
   /* Formulario de contacto (Web3Forms) */
@@ -251,6 +323,22 @@
     if (preset) {
       const chip = $$('input[name="interest"]', form).find((c) => c.value === preset);
       if (chip) chip.checked = true;
+    }
+    /* ?negocio=&senales= viene de la autoevaluación: solo se aceptan claves e índices conocidos */
+    const bizKey = params.get('negocio');
+    const msgField = form.querySelector('textarea[name="message"]');
+    const biz = quizCopy && bizKey ? quizCopy.industries.find((i) => i.key === bizKey) : null;
+    if (biz && msgField && !msgField.value) {
+      const idx = (params.get('senales') || '').split('.')
+        .filter((v) => /^[0-5]$/.test(v))
+        .map(Number)
+        .filter((v, i, arr) => arr.indexOf(v) === i && biz.signals[v]);
+      const lines = [`${quizCopy.prefillBiz}: ${biz.label}`];
+      if (idx.length) {
+        lines.push(`${quizCopy.prefillSignals}:`);
+        idx.forEach((v) => lines.push(`- ${biz.signals[v].t}`));
+      }
+      msgField.value = `${lines.join('\n')}\n\n`;
     }
 
     /* Límites contra abuso. Son solo disuasivos en el navegador: el filtro de spam y el

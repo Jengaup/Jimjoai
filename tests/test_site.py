@@ -139,8 +139,8 @@ def resolve(page, url):
     if not path:
         return None
     if path.startswith("/"):
-        if page == "404.html" and path.startswith("/Jimjoai/"):
-            path = path[len("/Jimjoai/"):]
+        if page == "404.html" and path.startswith("/"):
+            path = path[1:]
         else:
             path = path.lstrip("/")
         target = os.path.join(ROOT, path)
