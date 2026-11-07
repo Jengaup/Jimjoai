@@ -12,7 +12,7 @@
  * Nunca pongas aquí claves privadas, contraseñas, tokens de API secretos ni datos
  * personales que no quieras publicar. La clave de Web3Forms es la única excepción,
  * porque Web3Forms la diseñó para usarse en el navegador. Para protegerla, en el panel
- * de Web3Forms limita los dominios permitidos a jengaup.github.io (si tu plan lo ofrece)
+ * de Web3Forms limita los dominios permitidos a ai.josealbertopr.com (si tu plan lo ofrece)
  * y activa el filtro de spam.
  * bookingUrl y linkedinUrl solo se usan si empiezan con https://; el correo solo se
  * muestra si tiene un formato válido.

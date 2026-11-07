@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://jengaup.github.io/Jimjoai/sitemap.xml
+Sitemap: https://ai.josealbertopr.com/sitemap.xml
