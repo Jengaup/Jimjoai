@@ -134,26 +134,31 @@
           <div>
             <p class="eyebrow reveal">30-second checkup</p>
             <h2 class="title-lg reveal" id="quiz-title">How much of this happens at your business?</h2>
-            <p class="lead reveal">Check whatever sounds familiar. If two or more ring true, there are very likely hours every week you can win back.</p>
+            <p class="lead reveal">Pick your type of business and check whatever sounds familiar. If two or more ring true, there are very likely hours every week you can win back.</p>
           </div>
         </div>
-        <div class="quiz reveal" data-quiz='{"count":"{n} of {t} signs","bands":{"none":{"title":"Check the signs you recognize","text":"Your result updates as you go."},"low":{"title":"There is a clear opportunity","text":"Automating just one process would already make a difference."},"mid":{"title":"Your team is losing hours every week","text":"A small pilot can give them time back within a few weeks."},"high":{"title":"It’s time to automate","text":"Your operation leans too hard on manual work. Let’s talk."}},"areas":{"seguimiento":"I’d start with automatic client follow-up.","visibilidad":"I’d start with a dashboard that puts all your information in one place.","equipo":"I’d start by training your team to use AI in their day-to-day work."}}'>
-          <fieldset class="quiz-options">
-            <legend class="sr-only">Signs of opportunity</legend>
-            <div class="quiz-option"><input type="checkbox" id="q1" data-area="seguimiento"><label for="q1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>We follow up with clients by hand, one at a time</label></div>
-            <div class="quiz-option"><input type="checkbox" id="q2" data-area="visibilidad"><label for="q2"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>We’re not sure which orders or estimates are still pending</label></div>
-            <div class="quiz-option"><input type="checkbox" id="q3" data-area="visibilidad"><label for="q3"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>Clients call to ask where their order is</label></div>
-            <div class="quiz-option"><input type="checkbox" id="q4" data-area="visibilidad"><label for="q4"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>We copy the same information between systems and spreadsheets</label></div>
-            <div class="quiz-option"><input type="checkbox" id="q5" data-area="equipo"><label for="q5"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>The team barely uses AI, or uses it without a clear method</label></div>
-            <div class="quiz-option"><input type="checkbox" id="q6" data-area="seguimiento"><label for="q6"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>Salespeople spend more time following up than finding new clients</label></div>
-          </fieldset>
+        <div class="quiz reveal" data-quiz>
+          <div class="quiz-main">
+            <fieldset class="quiz-step quiz-step-industry"><legend class="quiz-step-label"><span aria-hidden="true">1</span>What kind of business do you run?</legend><div class="quiz-industries" data-quiz-industries></div></fieldset>
+            <fieldset class="quiz-step"><legend class="quiz-step-label"><span aria-hidden="true">2</span>Check what happens to you</legend>
+              <div class="quiz-options" data-quiz-options>
+                <div class="quiz-option"><input type="checkbox" id="q1"><label for="q1"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>We follow up with clients by hand, one at a time</label></div>
+                <div class="quiz-option"><input type="checkbox" id="q2"><label for="q2"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>We’re not sure which orders or estimates are still pending</label></div>
+                <div class="quiz-option"><input type="checkbox" id="q3"><label for="q3"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>Clients call to ask where their order is</label></div>
+                <div class="quiz-option"><input type="checkbox" id="q4"><label for="q4"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>We copy the same information between systems and spreadsheets</label></div>
+                <div class="quiz-option"><input type="checkbox" id="q5"><label for="q5"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>The team barely uses AI, or uses it without a clear method</label></div>
+                <div class="quiz-option"><input type="checkbox" id="q6"><label for="q6"><span class="box"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" aria-hidden="true"><path d="m6 12 4 4 8-8"/></svg></span>Salespeople spend more time following up than finding new clients</label></div>
+              </div>
+            </fieldset>
+          </div>
           <div class="quiz-result" aria-live="polite">
             <span class="label" data-quiz-count>0 of 6 signs</span>
             <div class="meter" aria-hidden="true"><i></i></div>
             <h3 data-quiz-title>Check the signs you recognize</h3>
             <p data-quiz-text>Your result updates as you go.</p>
+            <div class="quiz-recs" data-quiz-recs hidden><span class="label">What I would automate first</span><ul></ul></div>
             <div class="spacer"></div>
-            <a class="button button-volt" href="contact.html">Tell me about it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="button button-volt" href="contact.html" data-quiz-cta>Tell me about it <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
       </div>
@@ -286,6 +291,7 @@
   <aside class="mobile-cta" aria-label="Booking"><a class="button button-signal" href="contact.html" data-booking>Book a call</a></aside>
 
   <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/quiz-data.js"></script>
   <script src="../assets/js/site.js" defer></script>
 </body>
 </html>

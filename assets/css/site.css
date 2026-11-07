@@ -523,3 +523,34 @@ main [id] { scroll-margin-top: 88px; }
 @media (prefers-reduced-motion: reduce) and (min-width: 681px) {
   .board-toast { display: none; }
 }
+
+/* Autoevaluación por tipo de negocio */
+.quiz { align-items: start; }
+.quiz-main { display: grid; gap: 26px; min-width: 0; }
+.quiz-step { min-width: 0; margin: 0; padding: 0; border: 0; }
+.quiz-step-label { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding: 0; font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; letter-spacing: -.02em; }
+.quiz-step-label span { flex: 0 0 28px; height: 28px; display: grid; place-items: center; border-radius: 50%; color: var(--volt); background: var(--ink); font: 600 .78rem var(--font-mono); }
+.quiz-industries { display: flex; flex-wrap: wrap; gap: 8px; }
+.quiz-industries input { position: absolute; opacity: 0; pointer-events: none; }
+.quiz-industries label { padding: 10px 16px; border: 1.5px solid var(--line); border-radius: 999px; background: var(--card); font-size: .92rem; font-weight: 600; cursor: pointer; transition: border-color .2s, background .2s, color .2s, transform .2s var(--ease); }
+.quiz-industries label:hover { border-color: var(--ink); transform: translateY(-1px); }
+.quiz-industries input:checked + label { border-color: var(--ink); color: #fff; background: var(--ink); }
+.quiz-industries input:focus-visible + label { outline: 3px solid var(--signal-ink); outline-offset: 3px; }
+html:not(.js) .quiz-step-industry { display: none; }
+.quiz-option.is-entering { animation: optIn .5s var(--ease) both; animation-delay: calc(var(--i, 0) * 55ms); }
+.quiz-result { position: sticky; top: 96px; min-height: 380px; }
+.quiz-recs { margin-top: 20px; padding-top: 18px; border-top: 1px solid rgba(255,255,255,.12); }
+.quiz-recs[hidden] { display: none; }
+.quiz-recs ul { display: grid; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+.quiz-recs li { position: relative; padding-left: 24px; color: #f3f1ea; font-size: .95rem; line-height: 1.4; animation: optIn .4s var(--ease) both; }
+.quiz-recs li::before { content: "→"; position: absolute; left: 0; color: var(--volt); }
+@keyframes optIn { from { opacity: 0; transform: translateY(10px); } }
+@media (max-width: 1020px) { .quiz-result { position: static; min-height: 0; } }
+@media (max-width: 680px) { .quiz-industries label { padding: 9px 13px; font-size: .86rem; } }
+@media (max-width: 680px) {
+  .quiz-industries { flex-wrap: nowrap; overflow-x: auto; margin-inline: -16px; padding: 2px 16px 10px; scrollbar-width: none; scroll-snap-type: x proximity; -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 28px), transparent); mask-image: linear-gradient(90deg, transparent 0, #000 16px, #000 calc(100% - 28px), transparent); }
+  .quiz-industries::-webkit-scrollbar { display: none; }
+  .quiz-industries label { flex: 0 0 auto; white-space: nowrap; scroll-snap-align: start; }
+  .quiz-options { gap: 8px; }
+  .quiz-option label { padding: 13px 14px; font-size: .93rem; }
+}
