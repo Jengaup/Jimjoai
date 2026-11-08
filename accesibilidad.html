@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Accesibilidad · JimjoAI</title>
+  <meta name="description" content="Compromiso de accesibilidad de JimjoAI: objetivo WCAG 2.2 AA, pruebas realizadas, limitaciones conocidas y cómo reportar una barrera.">
+  <link rel="canonical" href="https://ai.josealbertopr.com/accesibilidad.html">
+  <link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/accesibilidad.html">
+  <link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/accessibility.html">
+  <link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/accesibilidad.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_PR">
+  <meta property="og:site_name" content="JimjoAI">
+  <meta property="og:title" content="Accesibilidad · JimjoAI">
+  <meta property="og:description" content="Compromiso de accesibilidad de JimjoAI: objetivo WCAG 2.2 AA, pruebas realizadas, limitaciones conocidas y cómo reportar una barrera.">
+  <meta property="og:url" content="https://ai.josealbertopr.com/accesibilidad.html">
+  <meta property="og:image" content="https://ai.josealbertopr.com/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#f3f0e8">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css?v=20261108b">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="./" aria-label="JimjoAI, inicio">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h3.5l2-5.5 4 11 2-5.5H21"/></svg></span>
+        <span>Jimjo<b>AI</b></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Abrir menú" data-labels='["Abrir menú","Cerrar menú"]'><span></span><span></span><span></span></button>
+      <div class="nav-menu" id="nav-menu">
+        <nav aria-label="Principal">
+          <ul class="nav-links">
+            <li><a href="servicios.html">Servicios</a></li>
+            <li><a href="casos.html">Casos</a></li>
+            <li><a href="como-trabajo.html">Cómo trabajo</a></li>
+            <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+        <a class="lang-switch" href="en/accessibility.html" hreflang="en" lang="en"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.7 3.8 5.7 3.8 9s-1.3 6.3-3.8 9c-2.5-2.7-3.8-5.7-3.8-9S9.5 5.7 12 3Z"/></svg>EN<span class="sr-only">: view this page in English</span></a>
+        <a class="button button-primary button-sm" href="contacto.html" data-booking>Agenda una llamada</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="container">
+        <ol class="breadcrumbs reveal">
+          <li><a href="./">Inicio</a></li>
+          <li aria-current="page">Accesibilidad</li>
+        </ol>
+        <p class="eyebrow reveal" style="--d:.05s">Declaración de accesibilidad</p>
+        <h1 class="reveal" style="--d:.1s">Un sitio que todos puedan usar.</h1>
+        <p class="lead reveal" style="--d:.18s">Quiero que cualquier persona pueda navegar este sitio y contactarme, sin importar cómo accede a internet.</p>
+      </div>
+    </section>
+
+    <section class="section section-tight privacy">
+      <div class="container">
+        <div class="prose reveal">
+          <p class="case-meta">Última revisión: 8 de noviembre de 2026</p>
+
+          <h2>Objetivo</h2>
+          <p>El sitio busca cumplir con las Pautas de Accesibilidad para el Contenido Web (WCAG) 2.2, nivel AA. Es una meta de trabajo continuo: puede haber áreas que todavía estoy mejorando.</p>
+
+          <h2>Qué se ha hecho</h2>
+          <ul>
+            <li>Estructura con encabezados ordenados, regiones (navegación, contenido, pie de página) y un enlace para saltar al contenido.</li>
+            <li>Todo se puede usar con teclado, con foco visible. El menú móvil se cierra con Escape.</li>
+            <li>Formularios con etiquetas, mensajes de error asociados a cada campo y avisos que leen los lectores de pantalla.</li>
+            <li>Contraste de colores revisado y animaciones que se detienen si activas la opción de reducir movimiento en tu sistema.</li>
+            <li>Diseño que se adapta a celulares, tabletas y al zoom del navegador hasta 200%.</li>
+          </ul>
+
+          <h2>Cómo se ha revisado</h2>
+          <p>Con pruebas automáticas (axe-core), recorridos con teclado, simulación de movimiento reducido y revisión visual en distintos tamaños de pantalla. Todavía no se ha hecho una evaluación con personas usuarias de tecnologías de asistencia.</p>
+
+          <h2>Limitaciones conocidas</h2>
+          <ul>
+            <li>El tablero animado de la página de inicio es una ilustración. Los lectores de pantalla reciben una descripción en lugar de su contenido.</li>
+            <li>La agenda de Calendly es un servicio externo y su accesibilidad depende de ese proveedor. Si te resulta difícil, usa el formulario de contacto.</li>
+          </ul>
+
+          <h2>Reporta una barrera</h2>
+          <p>Si algo no te funciona, escríbeme por el <a href="contacto.html">formulario de contacto</a>. Ayuda mucho si incluyes:</p>
+          <ul>
+            <li>La página donde ocurrió</li>
+            <li>Qué intentabas hacer y qué pasó</li>
+            <li>Tu navegador y dispositivo</li>
+            <li>La tecnología de asistencia que usas, si aplica (por ejemplo, un lector de pantalla)</li>
+          </ul>
+          <p>Si el formulario es justamente la barrera, puedes agendar una llamada desde cualquier botón de “Agenda una llamada”.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h3.5l2-5.5 4 11 2-5.5H21"/></svg></span><span>Jimjo<b>AI</b></span></a>
+          <p class="footer-tag">Consultoría e implementación de inteligencia artificial y automatización para negocios.</p>
+        </div>
+        <div class="footer-col">
+          <h2>Explora</h2>
+          <ul><li><a href="servicios.html">Servicios</a></li><li><a href="casos.html">Casos</a></li><li><a href="como-trabajo.html">Cómo trabajo</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h2>Contacto</h2>
+          <ul><li><a href="contacto.html">Formulario</a></li><li data-email hidden><a href="#">Correo</a></li><li data-linkedin hidden><a href="#">LinkedIn</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h2>Idioma</h2>
+          <ul><li><a href="accesibilidad.html" aria-current="true">Español</a></li><li><a href="en/accessibility.html" hreflang="en" lang="en">English</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h2>Legal</h2>
+          <ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos de uso</a></li><li><a href="accesibilidad.html">Accesibilidad</a></li><li><a href="contacto.html?solicitud=datos">Solicitud de datos</a></li></ul>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span data-year>2026</span> JimjoAI. Todos los derechos reservados.</span><span>Hecho con automatización y café.</span></div>
+      <div class="footer-big" aria-hidden="true">Jimjo<b>AI</b></div>
+    </div>
+  </footer>
+
+  <aside class="mobile-cta" aria-label="Agendar"><a class="button button-signal" href="contacto.html" data-booking>Agenda una llamada</a></aside>
+
+  <script src="assets/js/config.js?v=20261108b"></script>
+  <script src="assets/js/site.js?v=20261108b" defer></script>
+</body>
+</html>

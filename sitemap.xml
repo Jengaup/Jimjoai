@@ -2,74 +2,114 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ai.josealbertopr.com/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/"/>
+  </url>
+  <url>
+    <loc>https://ai.josealbertopr.com/en/</loc>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/"/>
   </url>
   <url>
     <loc>https://ai.josealbertopr.com/servicios.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/servicios.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/services.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/servicios.html"/>
+  </url>
+  <url>
+    <loc>https://ai.josealbertopr.com/en/services.html</loc>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/servicios.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/services.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/servicios.html"/>
   </url>
   <url>
     <loc>https://ai.josealbertopr.com/casos.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/casos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/case-studies.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/casos.html"/>
+  </url>
+  <url>
+    <loc>https://ai.josealbertopr.com/en/case-studies.html</loc>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/casos.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/case-studies.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/casos.html"/>
   </url>
   <url>
     <loc>https://ai.josealbertopr.com/como-trabajo.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/como-trabajo.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/how-i-work.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/como-trabajo.html"/>
+  </url>
+  <url>
+    <loc>https://ai.josealbertopr.com/en/how-i-work.html</loc>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/como-trabajo.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/how-i-work.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/como-trabajo.html"/>
   </url>
   <url>
     <loc>https://ai.josealbertopr.com/contacto.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/contacto.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/contact.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/contacto.html"/>
+  </url>
+  <url>
+    <loc>https://ai.josealbertopr.com/en/contact.html</loc>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/contacto.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/contact.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/contacto.html"/>
   </url>
   <url>
     <loc>https://ai.josealbertopr.com/privacidad.html</loc>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/privacidad.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/privacidad.html"/>
-  </url>
-  <url>
-    <loc>https://ai.josealbertopr.com/en/</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/"/>
-  </url>
-  <url>
-    <loc>https://ai.josealbertopr.com/en/services.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/servicios.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/services.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/servicios.html"/>
-  </url>
-  <url>
-    <loc>https://ai.josealbertopr.com/en/case-studies.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/casos.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/case-studies.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/casos.html"/>
-  </url>
-  <url>
-    <loc>https://ai.josealbertopr.com/en/how-i-work.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/como-trabajo.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/how-i-work.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/como-trabajo.html"/>
-  </url>
-  <url>
-    <loc>https://ai.josealbertopr.com/en/contact.html</loc>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/contacto.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/contact.html"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/contacto.html"/>
   </url>
   <url>
     <loc>https://ai.josealbertopr.com/en/privacy.html</loc>
+    <lastmod>2026-11-08</lastmod>
     <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/privacidad.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/privacy.html"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/privacidad.html"/>
+  </url>
+  <url>
+    <loc>https://ai.josealbertopr.com/terminos.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/terminos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/terminos.html"/>
+  </url>
+  <url>
+    <loc>https://ai.josealbertopr.com/en/terms.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/terminos.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/terms.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/terminos.html"/>
+  </url>
+  <url>
+    <loc>https://ai.josealbertopr.com/accesibilidad.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/accesibilidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/accesibilidad.html"/>
+  </url>
+  <url>
+    <loc>https://ai.josealbertopr.com/en/accessibility.html</loc>
+    <lastmod>2026-11-08</lastmod>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/accesibilidad.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/accessibility.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ai.josealbertopr.com/accesibilidad.html"/>
   </url>
 </urlset>

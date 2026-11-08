@@ -22,6 +22,8 @@ PAIRS = {
     "como-trabajo.html": "en/how-i-work.html",
     "contacto.html": "en/contact.html",
     "privacidad.html": "en/privacy.html",
+    "terminos.html": "en/terms.html",
+    "accesibilidad.html": "en/accessibility.html",
 }
 CONTACT_PAGES = ["contacto.html", "en/contact.html"]
 VOID = {"area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta",

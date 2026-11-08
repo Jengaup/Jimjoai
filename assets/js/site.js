@@ -340,12 +340,18 @@
       }
       msgField.value = `${lines.join('\n')}\n\n`;
     }
+    /* ?solicitud=datos abre una solicitud de acceso, corrección o eliminación con texto fijo */
+    if (params.get('solicitud') === 'datos' && msgField && !msgField.value && form.dataset.privacyRequest) {
+      msgField.value = form.dataset.privacyRequest;
+    }
 
     /* Límites contra abuso. Son solo disuasivos en el navegador: el filtro de spam y el
        límite real de envíos los aplica Web3Forms. */
     const MIN_FILL_MS = 3000;      /* envíos más rápidos que esto casi siempre son bots */
     const COOLDOWN_MS = 60000;     /* espera después de un envío correcto */
     const COOLDOWN_KEY = 'jimjo:lastSent';
+    const SEND_TIMEOUT_MS = 15000;
+    const fallback = $('[data-form-fallback]', form);
     const readyAt = performance.now();
     let sending = false;
     const lastSent = () => {
@@ -406,28 +412,42 @@
       data.delete('interest');
       data.append('interest', interests.join(', '));
       btn.setAttribute('aria-busy', 'true');
+      show('info', msg('msgSending'));
+      if (fallback) fallback.hidden = true;
+      /* Tiempo límite: si Web3Forms no contesta en 15 s se cancela y se avisa, sin borrar nada */
+      const controller = 'AbortController' in window ? new AbortController() : null;
+      const timer = controller ? setTimeout(() => controller.abort(), SEND_TIMEOUT_MS) : null;
+      let outcome = 'error';
       try {
         const res = await fetch('https://api.web3forms.com/submit', {
           method: 'POST',
           headers: { Accept: 'application/json' },
-          body: data
+          body: data,
+          signal: controller ? controller.signal : undefined
         });
-        const json = await res.json().catch(() => ({}));
-        if (res.ok && json.success !== false) {
-          memSent = Date.now();
-          markSent();
-          form.reset();
-          show('ok', msg('msgOk'));
-        } else {
-          show('error', msg('msgError'));
-        }
+        let json = null;
+        try { json = await res.json(); } catch (parseErr) { json = null; }
+        /* Solo es éxito si el servidor responde 2xx y Web3Forms confirma success: true */
+        if (res.ok && json && json.success === true) outcome = 'ok';
       } catch (err) {
-        show('error', msg('msgError'));
+        outcome = err && err.name === 'AbortError' ? 'timeout' : 'error';
       } finally {
-        sending = false;
-        btn.disabled = false;
-        btn.removeAttribute('aria-busy');
+        if (timer) clearTimeout(timer);
       }
+      if (outcome === 'ok') {
+        memSent = Date.now();
+        markSent();
+        form.reset();
+        show('ok', msg('msgOk'));
+      } else {
+        /* Los campos se conservan para que la persona pueda reintentar */
+        show('error', msg(outcome === 'timeout' ? 'msgTimeout' : 'msgError') || msg('msgError'));
+        if (fallback) fallback.hidden = false;
+      }
+      sending = false;
+      btn.disabled = false;
+      btn.removeAttribute('aria-busy');
+      status.focus({ preventScroll: false });
     });
   }
 })();
