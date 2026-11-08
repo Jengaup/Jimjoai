@@ -79,6 +79,14 @@ window.JIMJO_QUIZ = {
         { t: 'Las facturas salen tarde o nadie le da seguimiento al cobro', a: 'seguimiento', r: 'Facturación y recordatorios de cobro automáticos' },
         { t: 'No vemos el estado ni la ganancia de cada proyecto', a: 'visibilidad', r: 'Un tablero de proyectos con costos y avance' }
       ] },
+      { key: 'educacion', label: 'Educación o educación virtual', signals: [
+        { t: 'Contestamos una y otra vez las mismas preguntas sobre matrícula, horarios y costos', a: 'atencion', r: 'Un asistente que conteste las preguntas de matrícula, horarios y costos' },
+        { t: 'La matrícula y los documentos se manejan a mano o por correo', a: 'operacion', r: 'Matrícula en línea con recordatorios de documentos pendientes' },
+        { t: 'Perdemos interesados que preguntan pero no terminan de matricularse', a: 'seguimiento', r: 'Seguimiento automático a interesados hasta completar la matrícula' },
+        { t: 'Los recordatorios de pagos, clases y fechas de entrega se envían uno por uno', a: 'seguimiento', r: 'Recordatorios automáticos de pagos, clases y fechas de entrega' },
+        { t: 'No vemos en un solo lugar la asistencia, el progreso ni quién está por abandonar un curso', a: 'visibilidad', r: 'Un tablero de asistencia y progreso con alertas tempranas' },
+        { t: 'Preparar materiales, evaluaciones o contenido para cursos virtuales toma demasiado tiempo', a: 'equipo', r: 'Materiales y evaluaciones preparados con IA y revisados por el equipo docente' }
+      ] },
       { key: 'general', label: 'Otro tipo de negocio', signals: [
         { t: 'Damos seguimiento a clientes a mano, uno por uno', a: 'seguimiento', r: 'Seguimiento automático a clientes con recordatorios' },
         { t: 'No sabemos qué órdenes o estimados siguen pendientes', a: 'visibilidad', r: 'Un tablero con todo lo pendiente en un solo lugar' },
@@ -156,6 +164,14 @@ window.JIMJO_QUIZ = {
         { t: 'Field photos, notes and forms get lost or arrive late', a: 'operacion', r: 'Field forms that go straight to the office' },
         { t: 'Invoices go out late or nobody follows up on payment', a: 'seguimiento', r: 'Automatic invoicing and payment reminders' },
         { t: 'We can’t see the status or profit of each project', a: 'visibilidad', r: 'A project dashboard with costs and progress' }
+      ] },
+      { key: 'educacion', label: 'Education or online learning', signals: [
+        { t: 'We answer the same questions over and over about enrollment, schedules and tuition', a: 'atencion', r: 'An assistant that answers enrollment, schedule and tuition questions' },
+        { t: 'Enrollment and paperwork are handled by hand or over email', a: 'operacion', r: 'Online enrollment with reminders for missing documents' },
+        { t: 'We lose prospects who ask about a program but never finish enrolling', a: 'seguimiento', r: 'Automatic follow-up with prospects until they finish enrolling' },
+        { t: 'Payment, class and deadline reminders are sent one by one', a: 'seguimiento', r: 'Automatic reminders for payments, classes and deadlines' },
+        { t: 'We can’t see attendance, progress or who is about to drop a course in one place', a: 'visibilidad', r: 'An attendance and progress dashboard with early alerts' },
+        { t: 'Preparing materials, assessments or content for online courses takes too long', a: 'equipo', r: 'Materials and assessments drafted with AI and reviewed by your teaching team' }
       ] },
       { key: 'general', label: 'Other business', signals: [
         { t: 'We follow up with clients by hand, one by one', a: 'seguimiento', r: 'Automatic client follow-up with reminders' },
