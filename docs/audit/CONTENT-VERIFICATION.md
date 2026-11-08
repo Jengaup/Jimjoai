@@ -1,0 +1,24 @@
+# Verificación de contenido · JimjoAI
+
+Fecha: 8 de noviembre de 2026. No se cambió ningún dato por inferencia. Cada punto requiere confirmación del propietario.
+
+| # | Dato | Dónde aparece | Estado | Qué confirmar |
+|---|---|---|---|---|
+| 1 | Marca “JimjoAI” y dominio `ai.josealbertopr.com` | Todas las páginas, sitemap, CNAME | Consistente | — |
+| 2 | Logotipo (SVG de pulso con punto naranja) | Encabezado, pie, favicon, og.png | Consistente | Que sea el logotipo oficial |
+| 3 | Identidad del responsable | Privacidad y términos | **Confirmado:** José Alberto Jiménez | — |
+| 4 | Caso 1: 25% de tiempo recuperado (productos promocionales) | Inicio, casos, servicios, términos | Dato del propietario | Cifra y permiso para describir el caso; “casi una quinta parte” como glosa del 18% |
+| 5 | Caso 2: 18% del tiempo de seguimiento (equipo de ventas) | Inicio, casos, servicios | Dato del propietario | Igual |
+| 6 | Nombres en el tablero animado (Clínica Norte, Café Malecón, Torneo Juvenil, Bufete Rivera y sus versiones en inglés) | Inicio ES/EN | Ficticios. **Ahora llevan la etiqueta visible “ejemplo”** | Que no coincidan con clientes o negocios reales |
+| 7 | “Aceptando nuevos proyectos” | Inicio ES/EN | Afirmación de disponibilidad | Que siga siendo cierto |
+| 8 | Llamada de 30 minutos | Inicio, contacto, cómo trabajo | **Confirmado** | — |
+| 9 | Enlace de Calendly | `config.js` | Configurado | Que el evento exista y esté activo (no se abrió para no generar reservas) |
+| 10 | “En español o inglés” | Contacto, cómo trabajo | Consistente | Que Calendly ofrezca ambos idiomas o lo indique |
+| 11 | Herramientas: QuickBooks, Gmail, Outlook, Google Sheets, Excel, CRM, paqueterías, asistentes de IA | Cinta de inicio, servicios | Afirmación de capacidad | Que trabajes con todas |
+| 12 | Trabajo remoto | Cómo trabajo (FAQ) | Afirmación | Que sea correcto |
+| 13 | `areaServed`: PR, US, Latinoamérica | JSON-LD de inicio | **Confirmado** | — |
+| 14 | Correo y LinkedIn | `config.js` | Vacíos (ocultos) | Si se quieren mostrar |
+| 15 | “No vendo, alquilo ni comparto tus datos…” | Privacidad | **Confirmado** | — |
+| 16 | Sin teléfono público | Todo el sitio | Decisión del propietario | — |
+| 17 | Precios | No aparecen; “el costo se define después del diagnóstico” | Consistente | — |
+| 18 | Certificaciones, años de experiencia, testimonios | No aparecen | Correcto (no se inventaron) | — |

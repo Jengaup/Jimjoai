@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contacto: agenda tu diagnóstico · JimjoAI</title>
   <meta name="description" content="Cuéntame qué tarea le quita tiempo a tu equipo. Una llamada de 30 minutos, sin compromiso, en español o en inglés, para ver qué se puede automatizar.">
@@ -21,10 +21,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f3f0e8">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400..700&family=JetBrains+Mono:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="assets/css/site.css?v=20261108">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css?v=20261108b">
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
@@ -90,9 +89,12 @@
         </div>
 
         <form class="form-card reveal" style="--d:.14s" id="formulario" data-contact-form novalidate
+              data-privacy-request="Solicitud de privacidad: quiero [acceder a / corregir / eliminar] la información que envié desde este formulario. Fecha aproximada de mi mensaje: [opcional]. (En “Negocio o empresa” puedes escribir “Particular”.)"
               data-subject="Nueva solicitud desde la web"
               data-msg-ok="¡Gracias! Recibí tu mensaje. Te escribo por correo para coordinar la llamada."
-              data-msg-error="No se pudo enviar el mensaje. Revisa tu conexión e inténtalo de nuevo en unos minutos."
+              data-msg-error="No se pudo enviar el mensaje. Tu texto sigue aquí, así que puedes intentarlo de nuevo en unos minutos."
+              data-msg-timeout="El envío tardó demasiado y se canceló. Tu texto sigue aquí: inténtalo de nuevo en un momento."
+              data-msg-sending="Enviando tu mensaje…"
               data-msg-demo="El formulario funciona, pero el envío todavía no está conectado, así que este mensaje no llegó. Inténtalo de nuevo más adelante."
               data-msg-wait="Espera unos segundos y vuelve a intentarlo. Si ya enviaste tu mensaje, no hace falta mandarlo otra vez."
               data-msg-invalid="Revisa los campos marcados para poder enviar tu mensaje.">
@@ -136,9 +138,10 @@
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-actions">
             <button class="button button-primary" type="submit">Enviar mensaje <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-            <p class="form-note">Uso tus datos solo para contestarte. Más detalles en el <a href="privacidad.html">aviso de privacidad</a>.</p>
+            <p class="form-note">Uso tus datos solo para contestarte. El mensaje se envía a través de Web3Forms, un servicio externo de formularios. Más detalles en el <a href="privacidad.html">aviso de privacidad</a>.</p>
           </div>
-          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+          <p class="form-fallback" data-form-fallback hidden>Si el problema sigue, <a href="#formulario" data-booking>agenda la llamada directamente en mi calendario<span class="sr-only"> (se abre en otra pestaña)</span></a>.</p>
         </form>
       </div>
     </section>
@@ -161,7 +164,11 @@
         </div>
         <div class="footer-col">
           <h2>Idioma</h2>
-          <ul><li><a href="contacto.html" aria-current="true">Español</a></li><li><a href="en/contact.html" hreflang="en" lang="en">English</a></li><li><a href="privacidad.html">Privacidad</a></li></ul>
+          <ul><li><a href="contacto.html" aria-current="true">Español</a></li><li><a href="en/contact.html" hreflang="en" lang="en">English</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h2>Legal</h2>
+          <ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos de uso</a></li><li><a href="accesibilidad.html">Accesibilidad</a></li><li><a href="contacto.html?solicitud=datos">Solicitud de datos</a></li></ul>
         </div>
       </div>
       <div class="footer-bottom"><span>© <span data-year>2026</span> JimjoAI. Todos los derechos reservados.</span><span>Hecho con automatización y café.</span></div>
@@ -171,8 +178,8 @@
 
   <aside class="mobile-cta" aria-label="Agendar"><a class="button button-signal" href="#formulario" data-booking>Agenda una llamada</a></aside>
 
-  <script src="assets/js/config.js?v=20261108"></script>
-  <script src="assets/js/quiz-data.js?v=20261108"></script>
-  <script src="assets/js/site.js?v=20261108" defer></script>
+  <script src="assets/js/config.js?v=20261108b"></script>
+  <script src="assets/js/quiz-data.js?v=20261108b"></script>
+  <script src="assets/js/site.js?v=20261108b" defer></script>
 </body>
 </html>

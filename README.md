@@ -11,18 +11,23 @@ Sitio web estático y bilingüe (español e inglés) de JimjoAI: consultoría e 
   casos.html           Casos de éxito
   como-trabajo.html    Cómo trabajo
   contacto.html        Contacto (formulario)
-  privacidad.html      Privacidad
+  privacidad.html      Aviso de privacidad (incluye solicitud de acceso, corrección o eliminación)
+  terminos.html        Términos de uso
+  accesibilidad.html   Declaración de accesibilidad
   404.html             Página no encontrada
 /en/                   Inglés
-  index.html, services.html, case-studies.html,
-  how-i-work.html, contact.html, privacy.html
+  index.html, services.html, case-studies.html, how-i-work.html,
+  contact.html, privacy.html, terms.html, accessibility.html
 /assets/
-  css/site.css         Estilos de todo el sitio
-  js/site.js           Animaciones, menú, diagnóstico y formulario
+  css/site.css         Estilos de todo el sitio (incluye las tipografías)
+  fonts/               Tipografías alojadas en el sitio (sin Google Fonts)
+  js/site.js           Animaciones, menú, autoevaluación y formulario
+  js/quiz-data.js      Tipos de negocio y señales de la autoevaluación
   js/config.js         Tu configuración (formulario, agenda, correo, LinkedIn)
   img/                 Favicon e imagen para redes sociales (og.png)
-sitemap.xml, robots.txt, .nojekyll
+sitemap.xml, robots.txt, .nojekyll, CNAME
 tests/test_site.py     Pruebas automáticas del sitio
+docs/audit/            Auditoría técnica, de seguridad, privacidad, accesibilidad, SEO y rendimiento
 ```
 
 Cada página en español tiene su versión en inglés y el botón ES / EN lleva de una a la otra.
@@ -100,3 +105,7 @@ Las pruebas revisan que cada página tenga idioma, título, descripción y un so
 - [ ] Añadir foto y una biografía corta, si quieres darle una cara al sitio.
 - [ ] Llenar `assets/js/config.js` (clave de Web3Forms y enlace de agenda).
 - [ ] Conectar un dominio propio.
+
+## Caché del navegador
+
+GitHub Pages guarda los archivos en caché unos 10 minutos. Las páginas cargan el CSS y el JS con un número de versión (`?v=20261108b`). Si cambias `site.css`, `site.js`, `config.js` o `quiz-data.js`, cambia ese número en todas las páginas (un buscar y reemplazar) para que los visitantes reciban la versión nueva enseguida.

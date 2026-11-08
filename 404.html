@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Página no encontrada · JimjoAI</title>
   <meta name="description" content="La página que buscas no existe o cambió de lugar.">
@@ -18,10 +18,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f3f0e8">
   <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400..700&family=JetBrains+Mono:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="/assets/css/site.css?v=20261108">
+  <link rel="preload" href="/assets/fonts/bricolage-grotesque-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/inter-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/site.css?v=20261108b">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -83,7 +82,11 @@
         </div>
         <div class="footer-col">
           <h2>Idioma</h2>
-          <ul><li><a href="/" aria-current="true">Español</a></li><li><a href="/en/" hreflang="en" lang="en">English</a></li><li><a href="/privacidad.html">Privacidad</a></li></ul>
+          <ul><li><a href="/" aria-current="true">Español</a></li><li><a href="/en/" hreflang="en" lang="en">English</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h2>Legal</h2>
+          <ul><li><a href="/privacidad.html">Privacidad</a></li><li><a href="/terminos.html">Términos de uso</a></li><li><a href="/accesibilidad.html">Accesibilidad</a></li><li><a href="/contacto.html?solicitud=datos">Solicitud de datos</a></li></ul>
         </div>
       </div>
       <div class="footer-bottom"><span>© <span data-year>2026</span> JimjoAI. Todos los derechos reservados.</span><span>Hecho con automatización y café.</span></div>
@@ -93,7 +96,7 @@
 
   <aside class="mobile-cta" aria-label="Agendar"><a class="button button-signal" href="/contacto.html" data-booking>Agenda una llamada</a></aside>
 
-  <script src="/assets/js/config.js?v=20261108"></script>
-  <script src="/assets/js/site.js?v=20261108" defer></script>
+  <script src="/assets/js/config.js?v=20261108b"></script>
+  <script src="/assets/js/site.js?v=20261108b" defer></script>
 </body>
 </html>

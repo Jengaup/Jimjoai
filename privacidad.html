@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Aviso de privacidad · JimjoAI</title>
-  <meta name="description" content="Qué datos recoge el formulario de contacto de JimjoAI, para qué se usan, cómo se envían y cómo pedir que se borren. Sin cookies de rastreo.">
+  <meta name="description" content="Qué datos recoge JimjoAI, para qué se usan, qué servicios externos intervienen y cómo pedir acceso, corrección o eliminación.">
   <link rel="canonical" href="https://ai.josealbertopr.com/privacidad.html">
   <link rel="alternate" hreflang="es" href="https://ai.josealbertopr.com/privacidad.html">
   <link rel="alternate" hreflang="en" href="https://ai.josealbertopr.com/en/privacy.html">
@@ -15,16 +15,15 @@
   <meta property="og:locale" content="es_PR">
   <meta property="og:site_name" content="JimjoAI">
   <meta property="og:title" content="Aviso de privacidad · JimjoAI">
-  <meta property="og:description" content="Qué datos recoge este sitio, para qué se usan y cómo pedir que se borren.">
+  <meta property="og:description" content="Qué datos recoge JimjoAI, para qué se usan, qué servicios externos intervienen y cómo pedir acceso, corrección o eliminación.">
   <meta property="og:url" content="https://ai.josealbertopr.com/privacidad.html">
   <meta property="og:image" content="https://ai.josealbertopr.com/assets/img/og.png">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f3f0e8">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400..700&family=JetBrains+Mono:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="assets/css/site.css?v=20261108">
+  <link rel="preload" href="assets/fonts/bricolage-grotesque-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/inter-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/site.css?v=20261108b">
   <script>document.documentElement.classList.add('js');</script>
 </head>
 <body>
@@ -62,43 +61,71 @@
         </ol>
         <p class="eyebrow reveal" style="--d:.05s">Aviso de privacidad</p>
         <h1 class="reveal" style="--d:.1s">Tus datos, en pocas palabras.</h1>
-        <p class="lead reveal" style="--d:.18s">Este sitio recoge muy poca información y la usa para una sola cosa: contestarte. Aquí te explico qué se recoge, por dónde pasa y cómo pedir que se borre.</p>
+        <p class="lead reveal" style="--d:.18s">Este sitio recoge muy poca información y la usa para una sola cosa: contestarte. Aquí te explico qué se recoge, por dónde pasa y cómo pedir acceso, corrección o eliminación.</p>
       </div>
     </section>
 
     <section class="section section-tight privacy">
       <div class="container">
         <div class="prose reveal">
-          <p class="case-meta">Última actualización: noviembre de 2026</p>
+          <p class="case-meta">Vigente desde: 8 de noviembre de 2026 · Última actualización: 8 de noviembre de 2026</p>
+
+          <h2>Quién es responsable</h2>
+          <p>José Alberto Jiménez, quien opera JimjoAI, un servicio independiente de consultoría e implementación de inteligencia artificial y automatización, es el responsable de este sitio (ai.josealbertopr.com) y de los datos que recibe. Para cualquier asunto de privacidad, usa el <a href="contacto.html">formulario de contacto</a>.</p>
 
           <h2>Qué información recojo</h2>
-          <p>Solo la que escribes en el formulario de contacto:</p>
+          <p>Solo la que escribes y envías en el formulario de contacto:</p>
           <ul>
             <li>Tu nombre y el nombre de tu negocio o empresa</li>
             <li>Tu correo electrónico</li>
             <li>Tu teléfono, si decides darlo</li>
             <li>Los temas que marques y el mensaje que escribas</li>
           </ul>
-          <p>Junto con el mensaje se envía la dirección de la página desde la que escribiste, para saber de dónde llegó la solicitud.</p>
+          <p>Junto con el mensaje se envía la dirección de la página desde la que escribiste. Si llegaste desde la autoevaluación, esa dirección incluye el tipo de negocio y las señales que marcaste.</p>
+          <p>Escribe solo lo necesario para explicar tu caso. No incluyas contraseñas, datos financieros, información de salud ni datos personales de otras personas.</p>
+
+          <h2>La autoevaluación</h2>
+          <p>La autoevaluación de la página de inicio funciona completamente en tu navegador. Lo que marcas no se envía ni se guarda. Solo si pulsas el botón para contactarme, el tipo de negocio y las señales se copian en el mensaje del formulario, y puedes editarlos o borrarlos antes de enviarlo.</p>
 
           <h2>Para qué la uso</h2>
-          <p>Para contestarte y, si quieres, coordinar una llamada. No la uso para enviarte publicidad ni para nada que no tenga que ver con tu solicitud.</p>
+          <p>Para contestarte, coordinar una llamada si la pides y evitar envíos abusivos o spam. No la uso para enviarte publicidad ni para nada que no tenga que ver con tu solicitud.</p>
 
-          <h2>Cómo se envía</h2>
-          <p>El formulario se envía a través de Web3Forms, un servicio externo que recibe el mensaje y me lo hace llegar por correo. Web3Forms procesa esos datos según su propia política de privacidad.</p>
+          <h2>Servicios externos que intervienen</h2>
+          <ul>
+            <li><strong>Web3Forms</strong> recibe el formulario y me lo hace llegar por correo electrónico. Procesa esos datos según su <a href="https://web3forms.com/privacy" rel="noopener noreferrer">política de privacidad</a>.</li>
+            <li><strong>Proton Mail</strong>, mi proveedor de correo electrónico, guarda el mensaje en mi buzón una vez llega. Más información en la <a href="https://proton.me/legal/privacy" rel="noopener noreferrer">política de privacidad de Proton</a>.</li>
+            <li><strong>GitHub Pages</strong> aloja este sitio. Como cualquier servidor web, puede registrar datos técnicos de la visita, como tu dirección IP, para entregar las páginas y protegerlas. Más información en la <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener noreferrer">declaración de privacidad de GitHub</a>.</li>
+            <li><strong>Cloudflare</strong> gestiona el DNS del dominio. Cuando su servicio de proxy está activo, también procesa las visitas, incluida tu dirección IP, para entregar y proteger el sitio. Más información en la <a href="https://www.cloudflare.com/privacypolicy/" rel="noopener noreferrer">política de privacidad de Cloudflare</a>.</li>
+            <li><strong>Calendly</strong> solo interviene si pulsas un botón para agendar una llamada. En ese momento sales de este sitio y Calendly trata tus datos según su <a href="https://calendly.com/privacy" rel="noopener noreferrer">aviso de privacidad</a>.</li>
+          </ul>
+          <p>Las tipografías se sirven desde este mismo sitio, sin conexiones a Google Fonts.</p>
+
+          <h2>Cookies y almacenamiento en tu navegador</h2>
+          <p>Este sitio no usa cookies, publicidad ni analítica. Después de enviar el formulario, guarda en tu navegador (sessionStorage) solo la hora del envío, para evitar mensajes duplicados durante un minuto. Ese dato no contiene información personal, no sale de tu navegador y se borra al cerrar la pestaña.</p>
+
+          <h2>Cuánto tiempo se conserva</h2>
+          <p>Conservo los mensajes que llegan por el formulario durante 60 días desde que los recibo y luego los borro de mi buzón. Si quieres que borre el tuyo antes, pídemelo como se explica abajo.</p>
+
+          <h2 id="tus-datos">Acceso, corrección o eliminación de tus datos</h2>
+          <p>Puedes pedirme que te diga qué información tengo sobre ti, que la corrija o que la borre. Para hacerlo:</p>
+          <ol>
+            <li>Abre la <a href="contacto.html?solicitud=datos">solicitud de datos</a>. El formulario se abre con el mensaje ya preparado.</li>
+            <li>Usa el mismo correo con el que me escribiste, para poder encontrar tu mensaje.</li>
+            <li>Indica si quieres acceso, corrección o eliminación y, si la recuerdas, la fecha aproximada de tu mensaje.</li>
+          </ol>
+          <p>No hace falta enviar documentos ni más datos personales. Te contesto por correo.</p>
+
+          <h2>Menores de edad</h2>
+          <p>Este sitio está dirigido a negocios y no está pensado para que menores de edad envíen información.</p>
+
+          <h2>Seguridad</h2>
+          <p>El sitio funciona con HTTPS, limita lo que el navegador puede cargar y aplica medidas contra envíos automáticos. Ningún sistema en internet es completamente seguro, así que no puedo garantizar una seguridad absoluta.</p>
 
           <h2>Lo que no hago</h2>
           <ul>
             <li>No vendo, alquilo ni comparto tus datos con terceros para fines comerciales.</li>
-            <li>No uso cookies de rastreo, publicidad ni analítica en este sitio.</li>
+            <li>No uso cookies de rastreo, píxeles, publicidad ni analítica en este sitio.</li>
           </ul>
-
-          <h2>Servicios de terceros en el sitio</h2>
-          <p>Las tipografías del sitio se cargan desde Google Fonts. Al visitar una página, tu navegador se conecta a los servidores de Google para descargarlas, y Google puede recibir datos técnicos como tu dirección IP.</p>
-          <p>Si un botón de agenda te lleva a un servicio externo de citas, ese servicio tiene su propia política de privacidad.</p>
-
-          <h2>Cómo pedir que borre tus datos</h2>
-          <p>Escríbeme por el <a href="contacto.html">formulario de contacto</a> y dime que quieres que borre tu información. Lo hago y te confirmo por correo. También puedes pedirme que te diga qué datos tengo sobre ti.</p>
 
           <h2>Cambios a este aviso</h2>
           <p>Si cambio algo importante, actualizo esta página y la fecha de arriba.</p>
@@ -124,7 +151,11 @@
         </div>
         <div class="footer-col">
           <h2>Idioma</h2>
-          <ul><li><a href="privacidad.html" aria-current="true">Español</a></li><li><a href="en/privacy.html" hreflang="en" lang="en">English</a></li><li><a href="privacidad.html">Privacidad</a></li></ul>
+          <ul><li><a href="privacidad.html" aria-current="true">Español</a></li><li><a href="en/privacy.html" hreflang="en" lang="en">English</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h2>Legal</h2>
+          <ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos de uso</a></li><li><a href="accesibilidad.html">Accesibilidad</a></li><li><a href="contacto.html?solicitud=datos">Solicitud de datos</a></li></ul>
         </div>
       </div>
       <div class="footer-bottom"><span>© <span data-year>2026</span> JimjoAI. Todos los derechos reservados.</span><span>Hecho con automatización y café.</span></div>
@@ -134,7 +165,7 @@
 
   <aside class="mobile-cta" aria-label="Agendar"><a class="button button-signal" href="contacto.html" data-booking>Agenda una llamada</a></aside>
 
-  <script src="assets/js/config.js?v=20261108"></script>
-  <script src="assets/js/site.js?v=20261108" defer></script>
+  <script src="assets/js/config.js?v=20261108b"></script>
+  <script src="assets/js/site.js?v=20261108b" defer></script>
 </body>
 </html>

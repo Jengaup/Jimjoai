@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'sha256-/x7W7R75k8Roq0WaVRQX9blP4OufE5xbAdzklGxsgpw='; style-src 'self' 'unsafe-inline'; font-src 'self'; img-src 'self' data:; connect-src https://api.web3forms.com; form-action 'self' https://api.web3forms.com; base-uri 'self'; object-src 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Contact: book your assessment · JimjoAI</title>
   <meta name="description" content="Tell me which task is eating up your team’s time. A 30-minute call, no commitment, in English or Spanish, to see what can be automated.">
@@ -22,10 +22,9 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#f3f0e8">
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Inter:wght@400..700&family=JetBrains+Mono:wght@500;600;700&display=swap">
-  <link rel="stylesheet" href="../assets/css/site.css?v=20261108">
+  <link rel="preload" href="../assets/fonts/bricolage-grotesque-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/inter-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/site.css?v=20261108b">
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
@@ -91,9 +90,12 @@
         </div>
 
         <form class="form-card reveal" style="--d:.14s" id="formulario" data-contact-form novalidate
+              data-privacy-request="Privacy request: I would like to [access / correct / delete] the information I sent through this form. Approximate date of my message: [optional]. (In “Business or company” you can write “Individual”.)"
               data-subject="New request from the website"
               data-msg-ok="Thank you! I got your message. I’ll email you to set up the call."
-              data-msg-error="Your message couldn’t be sent. Check your connection and try again in a few minutes."
+              data-msg-error="Your message couldn’t be sent. Your text is still here, so you can try again in a few minutes."
+              data-msg-timeout="Sending took too long and was canceled. Your text is still here: please try again in a moment."
+              data-msg-sending="Sending your message…"
               data-msg-demo="The form works, but sending isn’t connected yet, so this message didn’t go through. Please try again later."
               data-msg-wait="Please wait a few seconds and try again. If you already sent your message, there’s no need to send it again."
               data-msg-invalid="Please check the highlighted fields so you can send your message.">
@@ -137,9 +139,10 @@
           <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
           <div class="form-actions">
             <button class="button button-primary" type="submit">Send message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-            <p class="form-note">I only use your information to reply to you. More details in the <a href="privacy.html">privacy notice</a>.</p>
+            <p class="form-note">I only use your information to reply to you. Your message is sent through Web3Forms, an external form service. More details in the <a href="privacy.html">privacy notice</a>.</p>
           </div>
-          <p class="form-status" role="status" aria-live="polite"></p>
+          <p class="form-status" role="status" aria-live="polite" tabindex="-1"></p>
+          <p class="form-fallback" data-form-fallback hidden>If the problem continues, <a href="#formulario" data-booking>book the call directly on my calendar<span class="sr-only"> (opens in a new tab)</span></a>.</p>
         </form>
       </div>
     </section>
@@ -162,7 +165,11 @@
         </div>
         <div class="footer-col">
           <h2>Language</h2>
-          <ul><li><a href="contact.html" aria-current="true">English</a></li><li><a href="../contacto.html" hreflang="es" lang="es">Español</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+          <ul><li><a href="contact.html" aria-current="true">English</a></li><li><a href="../contacto.html" hreflang="es" lang="es">Español</a></li></ul>
+        </div>
+        <div class="footer-col">
+          <h2>Legal</h2>
+          <ul><li><a href="privacy.html">Privacy</a></li><li><a href="terms.html">Terms of use</a></li><li><a href="accessibility.html">Accessibility</a></li><li><a href="contact.html?solicitud=datos">Data request</a></li></ul>
         </div>
       </div>
       <div class="footer-bottom"><span>© <span data-year>2026</span> JimjoAI. All rights reserved.</span><span>Made with automation and coffee.</span></div>
@@ -172,8 +179,8 @@
 
   <aside class="mobile-cta" aria-label="Booking"><a class="button button-signal" href="#formulario" data-booking>Book a call</a></aside>
 
-  <script src="../assets/js/config.js?v=20261108"></script>
-  <script src="../assets/js/quiz-data.js?v=20261108"></script>
-  <script src="../assets/js/site.js?v=20261108" defer></script>
+  <script src="../assets/js/config.js?v=20261108b"></script>
+  <script src="../assets/js/quiz-data.js?v=20261108b"></script>
+  <script src="../assets/js/site.js?v=20261108b" defer></script>
 </body>
 </html>

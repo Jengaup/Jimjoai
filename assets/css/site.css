@@ -1,3 +1,108 @@
+/* Tipografías alojadas en el propio sitio (antes se cargaban desde Google Fonts).
+   Bricolage Grotesque, Inter y JetBrains Mono: SIL Open Font License 1.1. Ver THIRD-PARTY-NOTICES. */
+
+/* latin-ext */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 500 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/bricolage-grotesque-500-800-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-weight: 500 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(../fonts/bricolage-grotesque-500-800-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(../fonts/inter-400-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url(../fonts/inter-400-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/jetbrains-mono-500-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(../fonts/jetbrains-mono-500-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/jetbrains-mono-500-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../fonts/jetbrains-mono-500-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* latin-ext */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/jetbrains-mono-500-700-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C4, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* latin */
+@font-face {
+  font-family: 'JetBrains Mono';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(../fonts/jetbrains-mono-500-700-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 /* JimjoAI — sistema de diseño compartido */
 :root {
   --bg: #f3f0e8;
@@ -378,7 +483,7 @@ p { margin: 0; }
 
 /* Footer */
 .site-footer { padding: clamp(56px, 7vw, 88px) 0 32px; color: #e9e7e0; background: var(--night); }
-.footer-top { display: grid; grid-template-columns: 1.4fr 1fr 1fr 1fr; gap: 32px; padding-bottom: 48px; border-bottom: 1px solid var(--night-line); }
+.footer-top { display: grid; grid-template-columns: 1.4fr repeat(4, 1fr); gap: 32px; padding-bottom: 48px; border-bottom: 1px solid var(--night-line); }
 .site-footer .brand { color: #fff; }
 .site-footer .brand-mark { color: var(--ink); background: var(--volt); }
 .site-footer .brand-mark::after { border-color: var(--night); }
@@ -554,3 +659,20 @@ html:not(.js) .quiz-step-industry { display: none; }
   .quiz-options { gap: 8px; }
   .quiz-option label { padding: 13px 14px; font-size: .93rem; }
 }
+
+/* Formulario: alternativa cuando el envío falla */
+.form-status:focus { outline: none; }
+.form-status:focus-visible { outline: 3px solid var(--signal-ink); outline-offset: 3px; }
+.form-fallback { margin-top: 10px; font-size: .92rem; }
+.form-fallback[hidden] { display: none; }
+.form-fallback a { font-weight: 700; }
+
+/* Rendimiento (LCP): la entrada del encabezado principal se anima con CSS desde el primer
+   pintado, sin esperar al JavaScript. Mismo movimiento que .reveal. */
+.js .hero .reveal, .js .page-hero .reveal { opacity: 1; transform: none; transition: none; animation: heroIn .8s var(--ease) var(--d, 0s) both; }
+@keyframes heroIn { from { opacity: .001; transform: translateY(28px); } }
+
+/* Etiqueta visible "ejemplo" en el tablero animado (los nombres son ilustrativos) */
+.board-bar .bar-tag { padding: 2px 7px; border: 1px solid var(--night-line); border-radius: 999px; color: #e9ebef; }
+.board-bar .sync { white-space: nowrap; }
+@media (max-width: 480px) { .board-bar .bar-path, .board-bar .dots { display: none; } }
