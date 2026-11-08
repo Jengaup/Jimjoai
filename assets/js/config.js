@@ -18,8 +18,8 @@
  * muestra si tiene un formato válido.
  */
 window.JIMJO_CONFIG = {
-  web3formsKey: "",
-  bookingUrl: "",
+  web3formsKey: "13247657-56cf-4c0e-92ed-ca3ce28afb3d",
+  bookingUrl: "https://calendly.com/jimjoai/consultoria",
   email: "",
   linkedinUrl: ""
 };
