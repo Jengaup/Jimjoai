@@ -22,8 +22,8 @@ Fecha: 8 de noviembre de 2026 · Objetivo: WCAG 2.2 nivel AA. No se afirma cumpl
 | Foco visible | `outline` sólido de 3 px con color de contraste suficiente |
 | Formularios | Etiquetas asociadas, `aria-invalid`, errores con `aria-describedby`, foco al primer campo inválido, estado con `role="status"`. **Nuevo:** “Enviando…” anunciado, foco al mensaje de resultado, botón deshabilitado durante el envío |
 | Contraste | axe sin violaciones con la página estable. Ver nota |
-| Imágenes / SVG | SVG decorativos con `aria-hidden`; el tablero animado es `role="img"` con descripción |
-| Movimiento reducido | Todo el contenido visible, una sola palabra en el titular rotativo, tablero estático, 0 animaciones infinitas activas |
+| Imágenes / SVG | SVG decorativos con `aria-hidden`; la animación de inicio es una `figure` con lista de pasos legible y descripción completa en `figcaption` |
+| Movimiento reducido | Todo el contenido visible, una sola palabra en el titular rotativo, animación de inicio completa y estática, 0 animaciones infinitas activas |
 | Zoom 200% / reflow 320 px | Sin desplazamiento horizontal en las 16 páginas |
 | Objetivos táctiles | Ningún control bajo 24×24 px (los enlaces dentro de texto están exentos) |
 

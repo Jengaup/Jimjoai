@@ -33,3 +33,8 @@ Fecha: 8 de noviembre de 2026 · Sin commit, push ni deploy (pendiente de aproba
 
 ## Archivos eliminados
 Ninguno del repositorio. (Solo se eliminó un archivo temporal `assets/css/fonts.css` creado durante el trabajo, que se integró en `site.css`.)
+
+## 9 de noviembre de 2026
+- Inicio ES/EN: el tablero animado se reemplazó por una animación que se explica sola (“Llega un pedido nuevo”): 4 pasos con nombre, estado de cada paso y un contador de tareas manuales que baja de 3 a 0. Sin nombres de negocios ficticios. Respeta movimiento reducido (se muestra completa).
+- Declaración de accesibilidad ES/EN actualizada para describir la nueva animación.
+- Versión de CSS y JS: `?v=20261109a`.

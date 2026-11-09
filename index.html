@@ -23,7 +23,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/bricolage-grotesque-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=20261108c">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261109a">
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
@@ -86,30 +86,23 @@
           </div>
         </div>
 
-        <div class="board reveal" style="--d:.2s" role="img" aria-label="Ejemplo animado de un tablero de órdenes sincronizado con QuickBooks que envía recordatorios y añade números de rastreo automáticamente"
-             data-states='["Por aprobar","Aprobado","En tránsito","Entregado"]'
-             data-toasts='[["Recordatorio enviado","El cliente recibió un aviso para aprobar su estimado"],["Estimado aprobado","PO creado en QuickBooks"],["Tracking añadido","Cliente notificado con su número de rastreo"],["Orden entregada","Se cerró sin un solo correo manual"]]'>
-          <div class="board-bar" aria-hidden="true">
-            <span class="dots"><i></i><i></i><i></i></span>
-            <span class="bar-tag">ejemplo</span><span class="bar-path"> · tablero/órdenes</span>
-            <span class="sync"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v4h-4"/></svg>QuickBooks · sync</span>
+        <figure class="flow reveal" style="--d:.2s" data-flow aria-labelledby="flow-title"
+                data-status='["En espera","Procesando…","Automático"]' data-first-done="Recibido" data-first-active="Entrando…">
+          <div class="flow-head"><span class="flow-kicker">Así funciona una automatización</span><span class="flow-tag">ejemplo</span></div>
+          <p class="flow-title" id="flow-title">Llega un pedido nuevo</p>
+          <ol class="flow-steps">
+            <li class="flow-step" data-state="waiting"><span class="flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span><span class="flow-txt"><b>Llega el pedido</b><small>Por correo, formulario o WhatsApp</small></span><span class="flow-status" aria-hidden="true"></span></li>
+            <li class="flow-step" data-state="waiting"><span class="flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><span class="flow-txt"><b>Se registra solo</b><small>Los datos pasan a tu sistema, sin copiar y pegar</small></span><span class="flow-status" aria-hidden="true"></span></li>
+            <li class="flow-step" data-state="waiting"><span class="flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></span><span class="flow-txt"><b>El cliente recibe aviso</b><small>Confirmación y número de rastreo, al instante</small></span><span class="flow-status" aria-hidden="true"></span></li>
+            <li class="flow-step" data-state="waiting"><span class="flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M7 16v-6M12 16V6M17 16v-4"/></svg></span><span class="flow-txt"><b>Tu equipo lo ve en el tablero</b><small>Todo lo pendiente en un solo lugar</small></span><span class="flow-status" aria-hidden="true"></span></li>
+          </ol>
+          <div class="flow-foot" aria-hidden="true">
+            <span class="flow-count-label">Tareas que tu equipo hace a mano</span>
+            <span class="flow-count"><b data-flow-count>3</b><small>de 3</small></span>
           </div>
-          <div class="board-kpis" aria-hidden="true">
-            <div class="kpi"><small>Por aprobar</small><b data-kpi="0" data-base="3">0</b></div>
-            <div class="kpi"><small>En tránsito</small><b data-kpi="2" data-base="5">0</b></div>
-            <div class="kpi"><small>Entregadas</small><b class="up" data-kpi="3" data-base="11">0</b></div>
-          </div>
-          <ul class="board-rows" aria-hidden="true">
-            <li class="board-row"><span><span class="who">Clínica Norte</span><span class="meta">EST-1042 · 250 termos <span data-track hidden>· 1Z84F…</span></span></span><span class="chip" data-s="0"></span></li>
-            <li class="board-row"><span><span class="who">Café Malecón</span><span class="meta">EST-1039 · 500 vasos <span data-track hidden>· 1Z22A…</span></span></span><span class="chip" data-s="1"></span></li>
-            <li class="board-row"><span><span class="who">Torneo Juvenil</span><span class="meta">EST-1036 · 120 camisetas <span data-track hidden>· 1Z9KQ…</span></span></span><span class="chip" data-s="2"></span></li>
-            <li class="board-row"><span><span class="who">Bufete Rivera</span><span class="meta">EST-1031 · 80 libretas <span data-track hidden>· 1Z5TM…</span></span></span><span class="chip" data-s="0"></span></li>
-          </ul>
-          <div class="board-toast" aria-hidden="true">
-            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
-            <span class="txt"><b data-toast-title>Recordatorio enviado</b><span data-toast-text>Automático · sin intervención</span></span>
-          </div>
-        </div>
+          <p class="flow-note" aria-hidden="true">Tu equipo solo revisa y decide.</p>
+          <figcaption class="sr-only">Ejemplo animado: cuando llega un pedido, se registra solo en tu sistema, el cliente recibe confirmación y número de rastreo, y tu equipo lo ve en el tablero. Las tareas manuales pasan de 3 a 0.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -292,8 +285,8 @@
 
   <aside class="mobile-cta" aria-label="Agendar"><a class="button button-signal" href="contacto.html" data-booking>Agenda una llamada</a></aside>
 
-  <script src="assets/js/config.js?v=20261108c"></script>
-  <script src="assets/js/quiz-data.js?v=20261108c"></script>
-  <script src="assets/js/site.js?v=20261108c" defer></script>
+  <script src="assets/js/config.js?v=20261109a"></script>
+  <script src="assets/js/quiz-data.js?v=20261109a"></script>
+  <script src="assets/js/site.js?v=20261109a" defer></script>
 </body>
 </html>
