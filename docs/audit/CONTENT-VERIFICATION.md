@@ -9,7 +9,7 @@ Fecha: 8 de noviembre de 2026. No se cambió ningún dato por inferencia. Cada p
 | 3 | Identidad del responsable | Privacidad y términos | **Confirmado:** José Alberto Jiménez | — |
 | 4 | Caso 1: 25% de tiempo recuperado (productos promocionales) | Inicio, casos, servicios, términos | Dato del propietario | Cifra y permiso para describir el caso; “casi una quinta parte” como glosa del 18% |
 | 5 | Caso 2: 18% del tiempo de seguimiento (equipo de ventas) | Inicio, casos, servicios | Dato del propietario | Igual |
-| 6 | Nombres en el tablero animado (Clínica Norte, Café Malecón, Torneo Juvenil, Bufete Rivera y sus versiones en inglés) | Inicio ES/EN | Ficticios. **Ahora llevan la etiqueta visible “ejemplo”** | Que no coincidan con clientes o negocios reales |
+| 6 | Animación de inicio (“Llega un pedido nuevo”) | Inicio ES/EN | Ejemplo genérico con etiqueta visible “ejemplo”. Ya no muestra nombres de negocios | — |
 | 7 | “Aceptando nuevos proyectos” | Inicio ES/EN | Afirmación de disponibilidad | Que siga siendo cierto |
 | 8 | Llamada de 30 minutos | Inicio, contacto, cómo trabajo | **Confirmado** | — |
 | 9 | Enlace de Calendly | `config.js` | Configurado | Que el evento exista y esté activo (no se abrió para no generar reservas) |

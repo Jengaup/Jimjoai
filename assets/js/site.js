@@ -158,53 +158,46 @@
     }, 2600);
   });
 
-  /* Tablero animado */
-  const board = $('.board');
-  if (board) {
-    const states = readJSON(board, 'data-states') || [];
-    const toasts = readJSON(board, 'data-toasts') || [];
-    const rows = $$('.board-row', board);
-    const toast = $('.board-toast', board);
-    const kpis = $$('[data-kpi]', board);
-    const updateKpis = () => {
-      const counts = [0, 0, 0, 0];
-      rows.forEach((r) => { counts[Number($('.chip', r).dataset.s)] += 1; });
-      kpis.forEach((k) => {
-        const idx = Number(k.dataset.kpi);
-        k.textContent = String(counts[idx] + Number(k.dataset.base || 0));
+  /* Animación del hero: un pedido que se procesa solo, paso a paso */
+  const flow = $('[data-flow]');
+  if (flow) {
+    const steps = $$('.flow-step', flow);
+    const labels = readJSON(flow, 'data-status') || ['', '', ''];
+    const countEl = $('[data-flow-count]', flow);
+    const automated = steps.length - 1; /* el primer paso es la llegada del pedido */
+    const render = (k) => {
+      /* k = cantidad de pasos completados; el paso k está en proceso */
+      steps.forEach((step, i) => {
+        const state = i < k ? 'done' : i === k ? 'active' : 'waiting';
+        step.dataset.state = state;
+        let text = labels[0];
+        if (state === 'active') text = i === 0 ? flow.dataset.firstActive : labels[1];
+        if (state === 'done') text = i === 0 ? flow.dataset.firstDone : labels[2];
+        $('.flow-status', step).textContent = text;
       });
+      const manual = Math.max(0, automated - Math.max(0, k - 1));
+      if (countEl && countEl.textContent !== String(manual)) {
+        countEl.textContent = String(manual);
+        countEl.classList.remove('is-bump');
+        void countEl.offsetWidth;
+        countEl.classList.add('is-bump');
+      }
+      flow.style.setProperty('--fp', `${(Math.min(k, steps.length - 1) / (steps.length - 1)) * 100}%`);
+      flow.classList.toggle('is-complete', k >= steps.length);
     };
-    const setRow = (row, s) => {
-      const chip = $('.chip', row);
-      chip.dataset.s = String(s);
-      chip.textContent = states[s] || '';
-      const track = $('[data-track]', row);
-      if (track) track.hidden = s < 2;
-    };
-    rows.forEach((r) => setRow(r, Number($('.chip', r).dataset.s)));
-    updateKpis();
-    if (!reduceMotion && states.length) {
-      let turn = 0;
-      let hideTimer;
-      const step = () => {
-        if (document.hidden) return;
-        const row = rows[turn % rows.length];
-        const next = (Number($('.chip', row).dataset.s) + 1) % states.length;
-        setRow(row, next);
-        updateKpis();
-        row.classList.add('is-updated');
-        setTimeout(() => row.classList.remove('is-updated'), 1400);
-        if (toast && toasts[next]) {
-          $('[data-toast-title]', toast).textContent = toasts[next][0];
-          $('[data-toast-text]', toast).textContent = `${toasts[next][1]} · ${$('.who', row).textContent}`;
-          toast.classList.add('is-shown');
-          clearTimeout(hideTimer);
-          hideTimer = setTimeout(() => toast.classList.remove('is-shown'), 2300);
+    if (reduceMotion) {
+      render(steps.length);
+    } else {
+      let k = 0;
+      const tick = () => {
+        if (!document.hidden) {
+          render(k);
+          k = k >= steps.length ? 0 : k + 1;
         }
-        turn += 1;
+        setTimeout(tick, k === 0 ? 3200 : k === 1 ? 900 : 1300);
       };
-      setTimeout(step, 1200);
-      setInterval(step, 3000);
+      render(0);
+      setTimeout(tick, 900);
     }
   }
 

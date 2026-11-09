@@ -24,7 +24,7 @@
   <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/bricolage-grotesque-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/inter-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/site.css?v=20261108c">
+  <link rel="stylesheet" href="../assets/css/site.css?v=20261109a">
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
@@ -87,30 +87,23 @@
           </div>
         </div>
 
-        <div class="board reveal" style="--d:.2s" role="img" aria-label="Animated example of an order dashboard synced with QuickBooks that sends reminders and adds tracking numbers automatically"
-             data-states='["Pending","Approved","In transit","Delivered"]'
-             data-toasts='[["Reminder sent","The client got a nudge to approve their estimate"],["Estimate approved","PO created in QuickBooks"],["Tracking added","Client notified with their tracking number"],["Order delivered","Closed without a single manual email"]]'>
-          <div class="board-bar" aria-hidden="true">
-            <span class="dots"><i></i><i></i><i></i></span>
-            <span class="bar-tag">example</span><span class="bar-path"> · dashboard/orders</span>
-            <span class="sync"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M20 12a8 8 0 1 1-2.3-5.7M20 4v4h-4"/></svg>QuickBooks · sync</span>
+        <figure class="flow reveal" style="--d:.2s" data-flow aria-labelledby="flow-title"
+                data-status='["Waiting","Processing…","Automatic"]' data-first-done="Received" data-first-active="Incoming…">
+          <div class="flow-head"><span class="flow-kicker">How an automation works</span><span class="flow-tag">example</span></div>
+          <p class="flow-title" id="flow-title">A new order comes in</p>
+          <ol class="flow-steps">
+            <li class="flow-step" data-state="waiting"><span class="flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span><span class="flow-txt"><b>The order arrives</b><small>By email, form or WhatsApp</small></span><span class="flow-status" aria-hidden="true"></span></li>
+            <li class="flow-step" data-state="waiting"><span class="flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><span class="flow-txt"><b>It logs itself</b><small>Data flows into your system, no copy and paste</small></span><span class="flow-status" aria-hidden="true"></span></li>
+            <li class="flow-step" data-state="waiting"><span class="flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20a2 2 0 0 0 4 0"/></svg></span><span class="flow-txt"><b>The customer gets notified</b><small>Confirmation and tracking number, instantly</small></span><span class="flow-status" aria-hidden="true"></span></li>
+            <li class="flow-step" data-state="waiting"><span class="flow-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16M7 16v-6M12 16V6M17 16v-4"/></svg></span><span class="flow-txt"><b>Your team sees it on the dashboard</b><small>Everything pending in one place</small></span><span class="flow-status" aria-hidden="true"></span></li>
+          </ol>
+          <div class="flow-foot" aria-hidden="true">
+            <span class="flow-count-label">Tasks your team does by hand</span>
+            <span class="flow-count"><b data-flow-count>3</b><small>of 3</small></span>
           </div>
-          <div class="board-kpis" aria-hidden="true">
-            <div class="kpi"><small>Pending</small><b data-kpi="0" data-base="3">0</b></div>
-            <div class="kpi"><small>In transit</small><b data-kpi="2" data-base="5">0</b></div>
-            <div class="kpi"><small>Delivered</small><b class="up" data-kpi="3" data-base="11">0</b></div>
-          </div>
-          <ul class="board-rows" aria-hidden="true">
-            <li class="board-row"><span><span class="who">Northside Clinic</span><span class="meta">EST-1042 · 250 tumblers <span data-track hidden>· 1Z84F…</span></span></span><span class="chip" data-s="0"></span></li>
-            <li class="board-row"><span><span class="who">Harbor Café</span><span class="meta">EST-1039 · 500 cups <span data-track hidden>· 1Z22A…</span></span></span><span class="chip" data-s="1"></span></li>
-            <li class="board-row"><span><span class="who">Youth Soccer Cup</span><span class="meta">EST-1036 · 120 T-shirts <span data-track hidden>· 1Z9KQ…</span></span></span><span class="chip" data-s="2"></span></li>
-            <li class="board-row"><span><span class="who">Rivera Law Firm</span><span class="meta">EST-1031 · 80 notebooks <span data-track hidden>· 1Z5TM…</span></span></span><span class="chip" data-s="0"></span></li>
-          </ul>
-          <div class="board-toast" aria-hidden="true">
-            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M4 6h16v12H4z"/><path d="m4 7 8 6 8-6"/></svg></span>
-            <span class="txt"><b data-toast-title>Reminder sent</b><span data-toast-text>Automatic · hands-off</span></span>
-          </div>
-        </div>
+          <p class="flow-note" aria-hidden="true">Your team just reviews and decides.</p>
+          <figcaption class="sr-only">Animated example: when an order comes in, it logs itself in your system, the customer gets a confirmation and tracking number, and your team sees it on the dashboard. Manual tasks go from 3 to 0.</figcaption>
+        </figure>
       </div>
     </section>
 
@@ -293,8 +286,8 @@
 
   <aside class="mobile-cta" aria-label="Booking"><a class="button button-signal" href="contact.html" data-booking>Book a call</a></aside>
 
-  <script src="../assets/js/config.js?v=20261108c"></script>
-  <script src="../assets/js/quiz-data.js?v=20261108c"></script>
-  <script src="../assets/js/site.js?v=20261108c" defer></script>
+  <script src="../assets/js/config.js?v=20261109a"></script>
+  <script src="../assets/js/quiz-data.js?v=20261109a"></script>
+  <script src="../assets/js/site.js?v=20261109a" defer></script>
 </body>
 </html>
