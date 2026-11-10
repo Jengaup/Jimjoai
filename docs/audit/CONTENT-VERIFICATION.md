@@ -24,4 +24,4 @@ Fecha: 8 de noviembre de 2026. No se cambió ningún dato por inferencia. Cada p
 | 18 | Años de experiencia, testimonios | No aparecen | Correcto (no se inventaron) | — |
 | 19 | Claude 101 y Claude Code in Action (Claude Academy, 9 nov 2026) | Inicio y Cómo trabajo ES/EN | **Verificable:** PDF del propietario y enlace de verificación oficial | — |
 | 20 | Six Sigma Green Belt | Inicio y Cómo trabajo | Publicada **sin emisor**, por decisión del propietario. Su sitio josealbertopr.com la lista como “Six Sigma Green Belt (CSSGB)” de ASQ; el propietario la llamó “Lean Six Sigma Green Belt” | Confirmar el nombre exacto (se usó el de la credencial: Six Sigma) |
-| 21 | MBA en Gestión de Tecnología (University of Phoenix), UiPath (4 cursos, 2024), ITIL 4 Foundation, BRMP, CFR, CompTIA A+ y Network+ | Inicio y Cómo trabajo | Tomadas de josealbertopr.com, con autorización del propietario | — |
+| 21 | MBA en Gerencia de Tecnología (University of Phoenix), UiPath (4 cursos, 2024), ITIL 4 Foundation, BRMP, CFR, CompTIA A+ y Network+ | Inicio y Cómo trabajo | Tomadas de josealbertopr.com, con autorización del propietario | — |
