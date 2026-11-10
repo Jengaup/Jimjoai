@@ -27,6 +27,7 @@ El texto completo de cada licencia, con su aviso de copyright, está junto a las
 | `assets/img/favicon.svg` y marca en el encabezado | Creados para este proyecto (SVG propio) | Requiere confirmación del propietario como logotipo oficial |
 | `assets/img/og.png` | Generado para este proyecto con las fuentes anteriores | Propio |
 | Íconos SVG en línea (flechas, check, globo, etc.) | Trazos simples dibujados para el proyecto | Propios |
+| `assets/img/badges/claude-101.webp`, `claude-code-in-action.webp` | Insignias de Claude Academy otorgadas al propietario, convertidas de sus PDF (sin la línea de verificación inferior). Cada una enlaza a su página oficial de verificación | Credencial del propietario |
 
 No hay fotografías, videos ni imágenes de bancos de imágenes.
 

@@ -108,4 +108,4 @@ Las pruebas revisan que cada página tenga idioma, título, descripción y un so
 
 ## Caché del navegador
 
-GitHub Pages guarda los archivos en caché unos 10 minutos. Las páginas cargan el CSS y el JS con un número de versión (`?v=20261109a`). Si cambias `site.css`, `site.js`, `config.js` o `quiz-data.js`, cambia ese número en todas las páginas (un buscar y reemplazar) para que los visitantes reciban la versión nueva enseguida.
+GitHub Pages guarda los archivos en caché unos 10 minutos. Las páginas cargan el CSS y el JS con un número de versión (`?v=20261110a`). Si cambias `site.css`, `site.js`, `config.js` o `quiz-data.js`, cambia ese número en todas las páginas (un buscar y reemplazar) para que los visitantes reciban la versión nueva enseguida.
