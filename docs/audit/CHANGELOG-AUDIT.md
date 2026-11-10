@@ -38,3 +38,7 @@ Ninguno del repositorio. (Solo se eliminó un archivo temporal `assets/css/fonts
 - Inicio ES/EN: el tablero animado se reemplazó por una animación que se explica sola (“Llega un pedido nuevo”): 4 pasos con nombre, estado de cada paso y un contador de tareas manuales que baja de 3 a 0. Sin nombres de negocios ficticios. Respeta movimiento reducido (se muestra completa).
 - Declaración de accesibilidad ES/EN actualizada para describir la nueva animación.
 - Versión de CSS y JS: `?v=20261109a`.
+
+## 10 de noviembre de 2026
+- Certificaciones ES/EN: línea destacada en el hero del inicio (Six Sigma Green Belt · Claude Academy · MBA), sección “Formación y certificaciones” en Inicio y en Cómo trabajo con Six Sigma Green Belt, las insignias Claude 101 y Claude Code in Action (con enlace de verificación) y una lista con MBA, UiPath, ITIL 4, BRMP, CFR y CompTIA.
+- Versión de CSS y JS: `?v=20261110a`.
