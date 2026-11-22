@@ -42,3 +42,7 @@ Ninguno del repositorio. (Solo se eliminó un archivo temporal `assets/css/fonts
 ## 10 de noviembre de 2026
 - Certificaciones ES/EN: línea destacada en el hero del inicio (Six Sigma Green Belt · Claude Academy · MBA), sección “Formación y certificaciones” en Inicio y en Cómo trabajo con Six Sigma Green Belt, las insignias Claude 101 y Claude Code in Action (con enlace de verificación) y una lista con MBA, UiPath, ITIL 4, BRMP, CFR y CompTIA.
 - Versión de CSS y JS: `?v=20261110a`.
+
+## 22 de noviembre de 2026
+- Logos de clientes (PromoLab y Ekelon) en la sección de casos del inicio y en la página Casos, ES/EN. Se quitó la nota “no publico los nombres de los clientes”.
+- Versión de CSS y JS: `?v=20261122b`.

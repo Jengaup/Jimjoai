@@ -28,6 +28,7 @@ El texto completo de cada licencia, con su aviso de copyright, está junto a las
 | `assets/img/og.png` | Generado para este proyecto con las fuentes anteriores | Propio |
 | Íconos SVG en línea (flechas, check, globo, etc.) | Trazos simples dibujados para el proyecto | Propios |
 | `assets/img/badges/claude-101.webp`, `claude-code-in-action.webp` | Insignias de Claude Academy otorgadas al propietario, convertidas de sus PDF (sin la línea de verificación inferior). Cada una enlaza a su página oficial de verificación | Credencial del propietario |
+| `assets/img/clients/promolab.webp`, `ekelon.webp` | Logos de clientes entregados por el propietario, convertidos a WebP sin alterar su diseño | Marcas de sus dueños; uso como referencia de clientes |
 
 No hay fotografías, videos ni imágenes de bancos de imágenes.
 
