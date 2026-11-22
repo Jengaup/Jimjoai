@@ -46,3 +46,7 @@ Ninguno del repositorio. (Solo se eliminó un archivo temporal `assets/css/fonts
 ## 22 de noviembre de 2026
 - Logos de clientes (PromoLab y Ekelon) en la sección de casos del inicio y en la página Casos, ES/EN. Se quitó la nota “no publico los nombres de los clientes”.
 - Versión de CSS y JS: `?v=20261122b`.
+
+## 22 de noviembre de 2026 (servicios)
+- Servicio 04 renombrado a “Tableros y aplicaciones a la medida” (ES) / “Dashboards and custom internal apps” (EN), con el tracker del negocio de productos promocionales como ejemplo real y una línea de soporte y mantenimiento.
+- Opción de interés en contacto y datos estructurados actualizados. Versión `?v=20261122d`.
