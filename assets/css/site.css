@@ -698,3 +698,6 @@ html:not(.js) .quiz-step-industry { display: none; }
 .clients-logos li.logo-full { padding: 0; border: 0; background: transparent; }
 .clients-logos li.logo-full img { width: auto; height: 76px; max-width: none; border-radius: 16px; }
 @media (max-width: 680px) { .clients-logos li.logo-full img { height: auto; width: 100%; max-width: 340px; } .clients-logos li.logo-full { height: auto; } }
+.clients-logos a { display: grid; place-items: center; height: 100%; border-radius: 12px; transition: transform .2s var(--ease), opacity .2s; }
+.clients-logos a:hover { transform: translateY(-2px); opacity: .9; }
+.clients-logos li:not(.logo-full) a { width: 100%; }
