@@ -11,7 +11,7 @@ from html.parser import HTMLParser
 from urllib.parse import urlsplit, unquote
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-EXCLUDE_DIRS = {"node_modules", ".git", "tests"}
+EXCLUDE_DIRS = {"node_modules", ".git", "tests", ".hallmark"}
 EM_DASH = "—"
 
 # Spanish page (repo root) -> English counterpart (en/)

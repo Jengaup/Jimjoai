@@ -53,3 +53,9 @@ Ninguno del repositorio. (Solo se eliminó un archivo temporal `assets/css/fonts
 
 ## 22 de noviembre de 2026 (clientes)
 - Logo de H3 Home Care Agency LLC añadido a la fila de clientes (Inicio y Casos, ES/EN). Versión `?v=20261122e`.
+
+## 23 de noviembre de 2026 (rediseño con Hallmark)
+- Rediseño completo del sitio con Hallmark v2.0.0 (17 páginas, ES/EN). Se mantienen el logo JimjoAI, la autoevaluación, todo el contenido, los enlaces, el formulario y los dos idiomas.
+- Sistema nuevo y bloqueado en `design.md`: `assets/css/tokens.css`, `base.css`, `fonts.css` y `site.css` reescrito (todos los colores en variables, sin etiquetas en mayúsculas espaciadas, una sola receta de botón principal, animaciones solo con transform y opacity).
+- Inicio: hero con la animación del pedido como firma y cuatro etapas numeradas (detecta, automatiza, mide, capacita), lista de servicios y cierre. Aviso superior "Aceptando nuevos proyectos". Pie de página en formato de cierre de carta.
+- Resultado de Hallmark en el inicio: antes 106 FAIL y 106 REFLEX, ahora 0 y 0; todas las páginas internas en 0 FAIL y 0 REFLEX (excepciones registradas en el sello de `site.css`).

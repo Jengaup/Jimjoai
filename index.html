@@ -23,7 +23,7 @@
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/bricolage-grotesque-500-800-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/inter-400-700-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/site.css?v=20261122g">
+  <link rel="stylesheet" href="assets/css/site.css?v=20261123b">
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
   {
@@ -41,6 +41,8 @@
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
   <div class="scroll-progress" aria-hidden="true"></div>
+
+  <div class="topline"><div class="container"><p>Aceptando nuevos proyectos, en español e inglés.</p></div></div>
 
   <header class="site-header">
     <div class="container nav">
@@ -65,26 +67,15 @@
   </header>
 
   <main id="main">
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container hero-grid">
         <div>
-          <p class="status-pill reveal"><i aria-hidden="true"></i> Aceptando nuevos proyectos</p>
-          <h1 class="reveal" style="--d:.08s">
-            Menos
-            <span class="rotator" aria-hidden="true"><span class="is-active">copiar y pegar.</span><span>correos repetidos.</span><span>tareas manuales.</span><span>“¿y mi orden?”</span></span>
-            <span class="sr-only">trabajo manual.</span>
-            Más tiempo para <span class="mark">crecer.</span>
-          </h1>
-          <p class="lead reveal" style="--d:.16s">Ayudo a negocios a usar inteligencia artificial y automatización donde de verdad rinden: conecto tus herramientas, armo tableros con la información que necesitas y entreno a tu equipo para que trabaje mejor con IA.</p>
-          <div class="hero-actions reveal" style="--d:.24s">
-            <a class="button button-primary" href="contacto.html" data-booking>Agenda una llamada de 30 min <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="button button-ghost" href="casos.html">Ver resultados reales</a>
+          <h1 class="reveal" id="hero-title">Menos trabajo manual.<br> Más tiempo para crecer.</h1>
+          <p class="lead reveal" style="--d:.08s">Conecto tus herramientas, armo tableros y entreno a tu equipo en IA.</p>
+          <div class="hero-actions reveal" style="--d:.16s">
+            <a class="button button-primary" href="contacto.html" data-booking>Agenda una llamada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="link-arrow hero-link" href="#detecta">Haz la autoevaluación</a>
           </div>
-          <div class="hero-proof reveal" style="--d:.32s">
-            <div class="proof-item"><strong><span data-count="25">25</span><em>%</em></strong><span>del tiempo recuperado en un negocio de productos promocionales</span></div>
-            <div class="proof-item"><strong><span data-count="18">18</span><em>%</em></strong><span>del tiempo de seguimiento devuelto a un equipo de ventas</span></div>
-          </div>
-          <a class="cred-strip reveal" style="--d:.4s" href="#credenciales"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"/><path d="m8.5 14-1.5 7 5-3 5 3-1.5-7"/></svg><span><b>Six Sigma Green Belt</b> · <b>Claude Academy</b> · <b>MBA en Gerencia de Tecnología</b></span><span class="cred-strip-cta">Ver certificaciones →</span></a>
         </div>
 
         <figure class="flow reveal" style="--d:.2s" data-flow aria-labelledby="flow-title"
@@ -107,29 +98,13 @@
       </div>
     </section>
 
-    <div class="marquee" aria-label="Herramientas que conecto">
-      <div class="marquee-track">
-        <div class="marquee-group" style="display:flex">
-          <span class="marquee-label">Conecto lo que ya usas</span>
-          <span class="marquee-item">QuickBooks</span><span class="marquee-item">Gmail y Outlook</span><span class="marquee-item">Google Sheets</span><span class="marquee-item">Excel</span><span class="marquee-item">CRM</span><span class="marquee-item">Calendarios</span><span class="marquee-item">Paqueterías y tracking</span><span class="marquee-item">Asistentes de IA</span>
-        </div>
-        <div class="marquee-group" style="display:flex" aria-hidden="true">
-          <span class="marquee-label">Conecto lo que ya usas</span>
-          <span class="marquee-item">QuickBooks</span><span class="marquee-item">Gmail y Outlook</span><span class="marquee-item">Google Sheets</span><span class="marquee-item">Excel</span><span class="marquee-item">CRM</span><span class="marquee-item">Calendarios</span><span class="marquee-item">Paqueterías y tracking</span><span class="marquee-item">Asistentes de IA</span>
-        </div>
-      </div>
-    </div>
-
-    <section class="section" aria-labelledby="quiz-title">
+    <section class="stage" id="detecta" aria-labelledby="detecta-title">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow reveal">Autoevaluación de 30 segundos</p>
-            <h2 class="title-lg reveal" id="quiz-title">¿Cuánto de esto pasa en tu negocio?</h2>
-            <p class="lead reveal">Escoge tu tipo de negocio y marca lo que te suene. Si te identificas con dos o más señales, es muy probable que haya horas a la semana que se pueden recuperar.</p>
-          </div>
+        <div class="stage-head">
+          <h2 id="detecta-title"><span class="stage-num">1.</span> Detecta qué te cuesta tiempo</h2>
+          <p class="lead">Escoge tu tipo de negocio y marca lo que te pasa. Si te identificas con dos o más señales, hay horas que se pueden recuperar.</p>
         </div>
-        <div class="quiz reveal" data-quiz>
+        <div class="quiz" data-quiz>
           <div class="quiz-main">
             <fieldset class="quiz-step quiz-step-industry"><legend class="quiz-step-label"><span aria-hidden="true">1</span>¿Qué tipo de negocio tienes?</legend><div class="quiz-industries" data-quiz-industries></div></fieldset>
             <fieldset class="quiz-step"><legend class="quiz-step-label"><span aria-hidden="true">2</span>Marca lo que te pasa</legend>
@@ -144,60 +119,42 @@
             </fieldset>
           </div>
           <div class="quiz-result" aria-live="polite">
-            <span class="label" data-quiz-count>0 de 6 señales</span>
-            <div class="meter" aria-hidden="true"><i></i></div>
             <h3 data-quiz-title>Marca las señales que reconoces</h3>
+            <div class="meter" aria-hidden="true"><i></i></div>
+            <p class="label" data-quiz-count>0 de 6 señales</p>
             <p data-quiz-text>El resultado se actualiza mientras marcas.</p>
             <div class="quiz-recs" data-quiz-recs hidden><span class="label">Lo que automatizaría primero</span><ul></ul></div>
             <div class="spacer"></div>
-            <a class="button button-volt" href="contacto.html" data-quiz-cta>Cuéntame tu caso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="button button-primary" href="contacto.html" data-quiz-cta>Cuéntame tu caso <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark" aria-labelledby="services-title">
-      <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow reveal">Servicios</p>
-            <h2 class="title-lg reveal" id="services-title">Del diagnóstico a la implementación. Yo me encargo de las dos.</h2>
-          </div>
-          <a class="link-arrow reveal" href="servicios.html">Ver todos los servicios →</a>
+    <section class="stage section-alt" aria-labelledby="automatiza-title">
+      <div class="container tools">
+        <div>
+          <h2 id="automatiza-title"><span class="stage-num">2.</span> Lo automatizo con lo que ya usas</h2>
+          <p class="lead">No hace falta cambiar de sistemas. Conecto los que tienes y los pongo a trabajar juntos.</p>
+          <p class="hero-actions"><a class="link-arrow" href="servicios.html">Ver todos los servicios <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
         </div>
-        <div class="grid-3">
-          <article class="card reveal">
-            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5M8 11h6M11 8v6"/></svg></span>
-            <h3>Diagnóstico de procesos</h3>
-            <p>Reviso cómo trabaja tu equipo, dónde se pierde el tiempo y qué se puede automatizar primero. Sales con un plan claro y priorizado.</p>
-            <div class="tags"><span class="tag">Mapeo</span><span class="tag">Prioridades</span><span class="tag">Plan</span></div>
-          </article>
-          <article class="card reveal" style="--d:.08s">
-            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="13" width="7" height="7" rx="1.5"/><path d="M10 7.5h4a3 3 0 0 1 3 3V13M7 11v3a3 3 0 0 0 3 3h4"/></svg></span>
-            <h3>Implementación de automatizaciones</h3>
-            <p>Construyo los flujos: tableros conectados a tus sistemas, correos y recordatorios automáticos, calendarios y números de rastreo sin trabajo manual.</p>
-            <div class="tags"><span class="tag">Tableros</span><span class="tag">Integraciones</span><span class="tag">Alertas</span></div>
-          </article>
-          <article class="card reveal" style="--d:.16s">
-            <span class="card-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-5 9 5-9 5-9-5Z"/><path d="M7 11.5V16c0 1.5 2.2 3 5 3s5-1.5 5-3v-4.5M21 9v5"/></svg></span>
-            <h3>Capacitación en IA para equipos</h3>
-            <p>Entreno a tu equipo, por ejemplo al departamento de ventas, a usar IA en su trabajo diario y a automatizar tareas como el seguimiento a clientes.</p>
-            <div class="tags"><span class="tag">Talleres</span><span class="tag">Práctica</span><span class="tag">Buenas prácticas</span></div>
-          </article>
-        </div>
+        <ul class="tools-list" aria-label="Herramientas que conecto">
+          <li>QuickBooks</li><li>Gmail y Outlook</li><li>Google Sheets</li><li>Excel</li><li>CRM</li><li>Calendarios</li><li>Paqueterías y tracking</li><li>Asistentes de IA</li>
+        </ul>
       </div>
     </section>
 
-    <section class="section" aria-labelledby="cases-title">
+    <section class="stage band-night" aria-labelledby="mide-title">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow reveal">Resultados reales</p>
-            <h2 class="title-lg reveal" id="cases-title">Clientes que hoy trabajan con <span class="mark">más tiempo</span> y menos tareas manuales.</h2>
-          </div>
-          <a class="link-arrow reveal" href="casos.html">Leer los casos completos →</a>
+        <div class="stage-head">
+          <h2 id="mide-title"><span class="stage-num">3.</span> Medimos el resultado</h2>
         </div>
-        <div class="clients reveal" style="--d:.1s">
+        <dl class="figures">
+          <div><dd><span data-count="25">25</span>%</dd><dt><b>De reaccionar a tener todo en un tablero.</b> Del tiempo recuperado en un negocio de productos promocionales.</dt></div>
+          <div><dd><span data-count="18">18</span>%</dd><dt><b>Un equipo de ventas que vende más y persigue menos.</b> Del tiempo de seguimiento devuelto al equipo.</dt></div>
+        </dl>
+        <div class="results-foot">
+          <div class="clients">
           <p class="clients-label">Clientes con los que he trabajado</p>
           <ul class="clients-logos">
             <li><a href="https://promolabpr.com/" target="_blank" rel="noopener noreferrer"><img src="assets/img/clients/promolab.webp" width="600" height="154" alt="PromoLab" loading="lazy" decoding="async"><span class="sr-only"> (se abre en otra pestaña)</span></a></li>
@@ -205,98 +162,71 @@
             <li class="logo-dark"><a href="https://h3homecare.com/" target="_blank" rel="noopener noreferrer"><img src="assets/img/clients/h3-home-care.webp" width="666" height="87" alt="H3 Home Care Agency LLC" loading="lazy" decoding="async"><span class="sr-only"> (se abre en otra pestaña)</span></a></li>
           </ul>
         </div>
-        <div class="grid-2">
-          <article class="card reveal">
-            <div class="case-card">
-              <div class="case-stat"><span data-count="25">25</span>%<small>tiempo recuperado</small></div>
-              <div>
-                <span class="case-meta">Productos promocionales personalizados</span>
-                <h3>De reaccionar a tener todo en un tablero</h3>
-                <p>Todo se hacía a mano y QuickBooks solo se usaba para estimados y POs. Hoy un tablero sincronizado muestra cada orden, recuerda aprobaciones a los clientes y añade el tracking solo.</p>
-              </div>
-            </div>
-          </article>
-          <article class="card card-featured reveal" style="--d:.08s">
-            <div class="case-card">
-              <div class="case-stat" style="color:var(--volt)"><span data-count="18">18</span>%<small style="color:var(--night-muted)">tiempo devuelto a ventas</small></div>
-              <div>
-                <span class="case-meta" style="color:var(--night-muted)">Departamento de ventas</span>
-                <h3>Un equipo de ventas que vende más y persigue menos</h3>
-                <p>Capacité a todo el departamento en IA y en cómo automatizar el seguimiento a clientes. Ese tiempo ahora se usa para buscar clientes nuevos.</p>
-              </div>
-            </div>
-          </article>
+          <a class="link-arrow" href="casos.html">Leer los casos completos <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
         </div>
       </div>
     </section>
 
-    <section class="section section-dark creds" id="credenciales" aria-labelledby="creds-title">
+    <section class="stage" id="credenciales" aria-labelledby="creds-title">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow reveal">Formación y certificaciones</p>
-            <h2 class="title-lg reveal" id="creds-title">Mejora de procesos certificada y formación al día en IA.</h2>
-            <p class="lead reveal">Combino una certificación en mejora de procesos con formación reciente en inteligencia artificial y automatización, y una maestría en gerencia de tecnología.</p>
-          </div>
+        <div class="stage-head">
+          <h2 id="creds-title"><span class="stage-num">4.</span> Tu equipo aprende a usarlo</h2>
+          <p class="lead">Capacito a tu equipo con método de mejora de procesos y formación al día en IA.</p>
         </div>
         <div class="cred-feature">
-          <article class="cred-card cred-belt reveal">
+          <article class="cred-card cred-belt">
             <span class="cred-sigma" aria-hidden="true">6σ</span>
             <h3>Six Sigma Green Belt</h3>
             <p class="cred-meta">Metodología Six Sigma</p>
             <p>Certificación en mejora de procesos: medir cómo funciona un proceso, encontrar la causa de los problemas y sostener las mejoras.</p>
           </article>
-          <article class="cred-card reveal" style="--d:.08s">
+          <article class="cred-card">
             <img class="cred-img" src="assets/img/badges/claude-101.webp" width="440" height="299" alt="Insignia del curso Claude 101 de Claude Academy, otorgada a José Alberto Jiménez" loading="lazy" decoding="async">
             <h3>Claude 101</h3>
-            <p class="cred-meta">Claude Academy · noviembre de 2026</p>
+            <p class="cred-meta">Claude Academy, noviembre de 2026</p>
             <a class="link-arrow" href="https://academy.claude.com/verify/2fc83182c36825ca8de51f0536a030ae" target="_blank" rel="noopener noreferrer">Verificar insignia<span class="sr-only"> (se abre en otra pestaña)</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
           </article>
-          <article class="cred-card reveal" style="--d:.16s">
+          <article class="cred-card">
             <img class="cred-img" src="assets/img/badges/claude-code-in-action.webp" width="440" height="299" alt="Insignia del curso Claude Code in Action de Claude Academy, otorgada a José Alberto Jiménez" loading="lazy" decoding="async">
             <h3>Claude Code in Action</h3>
-            <p class="cred-meta">Claude Academy · noviembre de 2026</p>
+            <p class="cred-meta">Claude Academy, noviembre de 2026</p>
             <a class="link-arrow" href="https://academy.claude.com/verify/c9eda48094a6e33c0af03095b677a8e5" target="_blank" rel="noopener noreferrer">Verificar insignia<span class="sr-only"> (se abre en otra pestaña)</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg></a>
           </article>
         </div>
-        <ul class="cred-list reveal">
-            <li><b>MBA · Gerencia de Tecnología</b><span>University of Phoenix</span></li>
-            <li><b>Automatización y RPA · 4 cursos</b><span>UiPath · 2024</span></li>
+        <ul class="cred-list">
+            <li><b>MBA en Gerencia de Tecnología</b><span>University of Phoenix</span></li>
+            <li><b>Automatización y RPA, 4 cursos</b><span>UiPath, 2024</span></li>
             <li><b>ITIL® 4 Foundation</b><span>PeopleCert / Axelos</span></li>
-            <li><b>BRMP® Business Relationship Management Professional</b><span>APMG International · BRM Institute</span></li>
+            <li><b>BRMP® Business Relationship Management Professional</b><span>APMG International y BRM Institute</span></li>
             <li><b>CyberSec First Responder (CFR)</b><span>CertNexus</span></li>
             <li><b>CompTIA A+ y Network+</b><span>CompTIA</span></li>
         </ul>
       </div>
     </section>
 
-    <section class="section section-alt" aria-labelledby="process-title">
+    <section class="stage section-alt" aria-labelledby="hago-title">
       <div class="container">
-        <div class="section-head">
-          <div>
-            <p class="eyebrow reveal">Cómo trabajo</p>
-            <h2 class="title-lg reveal" id="process-title">Un proceso corto, claro y sin sorpresas.</h2>
-          </div>
-          <a class="link-arrow reveal" href="como-trabajo.html">Más sobre mi forma de trabajar →</a>
+        <div class="stage-head">
+          <h2 id="hago-title">Cinco formas de empezar</h2>
         </div>
-        <ol class="steps">
-          <li class="step reveal"><h3>Conversamos</h3><p>Una llamada de 30 minutos para entender tu negocio y dónde se atasca el trabajo.</p></li>
-          <li class="step reveal" style="--d:.08s"><h3>Diagnostico</h3><p>Reviso tus procesos y herramientas y te propongo qué automatizar primero.</p></li>
-          <li class="step reveal" style="--d:.16s"><h3>Implemento</h3><p>Construyo la solución con tus sistemas actuales y la pruebo con tu equipo.</p></li>
-          <li class="step reveal" style="--d:.24s"><h3>Mido y ajusto</h3><p>Revisamos el tiempo ahorrado, corregimos detalles y decidimos el próximo paso.</p></li>
-        </ol>
+        <ul class="rows">
+          <li><a href="servicios.html#diagnostico"><h3>Diagnóstico de procesos e IA</h3><p>Veo dónde se pierde el tiempo y qué automatizar primero.</p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="servicios.html#automatizacion"><h3>Implementación de automatizaciones</h3><p>Conecto tus sistemas, correos, recordatorios y tracking.</p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="servicios.html#capacitacion"><h3>Capacitación en IA para equipos</h3><p>Talleres prácticos sobre el trabajo real de tu equipo.</p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="servicios.html#tableros"><h3>Tableros y aplicaciones a la medida</h3><p>Herramientas internas conectadas a lo que ya usas.</p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+          <li><a href="servicios.html#asistentes"><h3>Asistentes con IA</h3><p>Borradores, resúmenes y clasificación de solicitudes.</p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></li>
+        </ul>
       </div>
     </section>
 
-    <section class="section">
-      <div class="container">
-        <div class="cta-band reveal">
-          <p class="eyebrow">Primer paso</p>
-          <h2>¿Qué parte de tu operación te gustaría no tener que hacer a mano?</h2>
-          <p>Cuéntamela. En 30 minutos te digo si se puede automatizar y por dónde empezaría. Sin compromiso.</p>
+    <section class="close" aria-labelledby="close-title">
+      <div class="container close-grid">
+        <div>
+          <h2 id="close-title">¿Qué te gustaría dejar de hacer a mano?</h2>
+          <p class="lead">Cuéntamelo. En 30 minutos te digo si se puede automatizar y por dónde empezaría. Sin compromiso.</p>
           <div class="hero-actions">
-            <a class="button button-volt" href="contacto.html" data-booking>Agenda una llamada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-            <a class="button button-ghost" href="servicios.html">Explorar servicios</a>
+            <a class="button button-primary" href="contacto.html" data-booking>Agenda tu llamada <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+            <a class="button button-ghost" href="contacto.html">Escríbeme</a>
           </div>
         </div>
       </div>
@@ -308,34 +238,22 @@
       <div class="footer-top">
         <div>
           <a class="brand" href="./"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 13h3.5l2-5.5 4 11 2-5.5H21"/></svg></span><span>Jimjo<b>AI</b></span></a>
+          <p class="footer-sign">José Alberto Jiménez, JimjoAI</p>
           <p class="footer-tag">Consultoría e implementación de inteligencia artificial y automatización para negocios.</p>
         </div>
-        <div class="footer-col">
-          <h2>Explora</h2>
-          <ul><li><a href="servicios.html">Servicios</a></li><li><a href="casos.html">Casos</a></li><li><a href="como-trabajo.html">Cómo trabajo</a></li></ul>
-        </div>
-        <div class="footer-col">
-          <h2>Contacto</h2>
-          <ul><li><a href="contacto.html">Formulario</a></li><li data-email hidden><a href="#">Correo</a></li><li data-linkedin hidden><a href="#">LinkedIn</a></li></ul>
-        </div>
-        <div class="footer-col">
-          <h2>Idioma</h2>
-          <ul><li><a href="./" aria-current="true">Español</a></li><li><a href="en/" hreflang="en" lang="en">English</a></li></ul>
-        </div>
-        <div class="footer-col">
-          <h2>Legal</h2>
-          <ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos de uso</a></li><li><a href="accesibilidad.html">Accesibilidad</a></li><li><a href="contacto.html?solicitud=datos">Solicitud de datos</a></li></ul>
-        </div>
+        <nav class="footer-col" aria-label="Explora"><ul><li><a href="servicios.html">Servicios</a></li><li><a href="casos.html">Casos</a></li><li><a href="como-trabajo.html">Cómo trabajo</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Contacto"><ul><li><a href="contacto.html">Formulario de contacto</a></li><li data-email hidden><a href="#">Correo</a></li><li data-linkedin hidden><a href="#">LinkedIn</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Idioma"><ul><li><a href="./" aria-current="true">Español</a></li><li><a href="en/" hreflang="en" lang="en">English</a></li></ul></nav>
+        <nav class="footer-col" aria-label="Legal"><ul><li><a href="privacidad.html">Privacidad</a></li><li><a href="terminos.html">Términos de uso</a></li><li><a href="accesibilidad.html">Accesibilidad</a></li><li><a href="contacto.html?solicitud=datos">Solicitud de datos</a></li></ul></nav>
       </div>
       <div class="footer-bottom"><span>© <span data-year>2026</span> JimjoAI. Todos los derechos reservados.</span><span>Hecho con automatización y café.</span></div>
-      <div class="footer-big" aria-hidden="true">Jimjo<b>AI</b></div>
     </div>
   </footer>
 
-  <aside class="mobile-cta" aria-label="Agendar"><a class="button button-signal" href="contacto.html" data-booking>Agenda una llamada</a></aside>
+  <aside class="mobile-cta" aria-label="Agendar"><a class="button button-primary" href="contacto.html" data-booking>Agenda una llamada</a></aside>
 
-  <script src="assets/js/config.js?v=20261122g"></script>
-  <script src="assets/js/quiz-data.js?v=20261122g"></script>
-  <script src="assets/js/site.js?v=20261122g" defer></script>
+  <script src="assets/js/config.js?v=20261123b"></script>
+  <script src="assets/js/quiz-data.js?v=20261123b"></script>
+  <script src="assets/js/site.js?v=20261123b" defer></script>
 </body>
 </html>
