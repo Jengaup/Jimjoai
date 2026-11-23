@@ -6,7 +6,7 @@ The locked system. Every Hallmark run reads this first and pages share it. Chang
 - Genre: modern-minimal
 - Shape of the first page: Narrative Workflow (four numbered stages: detect, automate, measure, train), draw 697726
 - Theme: brand (the JimjoAI logo: night ink, lime mark, orange dot and "AI")
-- Axes: light/grotesk-heavy/warm · posture: full palette (paper, a night field, the lime seal, the orange signal)
+- Axes: light/grotesk-heavy/warm · posture: committed (the lime seal fills the hero, every page head and the close; night bands for results and the footer; orange only in the wordmark)
 
 ## Tokens
 `assets/css/tokens.css` is the source of truth. The roles:
@@ -29,6 +29,7 @@ The spacing scale, the type scale, the easings and the durations are the scaffol
 - Night bands (`.section-dark`, `.band-night`) swap every text colour in the same rule.
 - Only `transform` and `opacity` animate; one entrance per page (the page hero), none below it.
 - Footer: letter close (sign-off, link groups as rows, legal line).
+- Page heads (`.hero`, `.page-hero`) and the home close sit on the lime field with a faint dot grid; their secondary text is `--color-ink-2`.
 
 ## Controls
 - Primary: ink fill (lime on night) · pill · 48px (44px small)

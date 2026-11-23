@@ -1,6 +1,6 @@
 /* Hallmark · shape: Narrative Workflow (draw 697726) · genre: modern-minimal · theme: brand · redesign: full
  * paper: oklch(95.5% 0.011 90) · accent: oklch(89.8% 0.203 122) lime seal from the logo, signal oklch(68.2% 0.211 38) for the wordmark · display: Bricolage Grotesque · body: Inter · hero: Stage (swap from Corridor: the built flow is the strongest real thing) · nav: banner over a bar · footer: letter close · signature: an order that processes itself, manual tasks from 3 to 0
- * axes: light/grotesk-heavy/warm · posture: full palette (paper, night field, signal for actions, seal lime from the logo) · contrast: pass · fold: pass · v2.0.0 */
+ * axes: light/grotesk-heavy/warm · posture: committed (the lime seal from the logo carries the hero, every page head and the close; night bands for results and the footer; orange only in the wordmark) · contrast: pass · fold: pass · v2.0.0 */
 /* Hallmark · pre-emit critique: P4 H4 E3 S4 R4 V3 · weakest: E, the stages lean on one reveal-free rhythm; varied the object in each stage (control, list, figures, credentials) */
 /* Hallmark · hero-review: fix · 4 findings · 3 resolved 1 partial (375: the steps complete on the first screen, the counter sits just below) */
 /* Hallmark · dropped from the home: the tool marquee, the three service cards, the case cards, the four process steps, the closing band and the hero credential strip · their content lives on Servicios, Casos and Cómo trabajo, and the home now tells the process as four stages */
@@ -422,6 +422,22 @@ html:not(.js) .quiz-step-industry { display: none; }
 
 /* Barra fija en celular */
 .mobile-cta { display: none; }
+
+/* ---------- Campo lima: el color del logo abre y cierra cada página ---------- */
+.hero, .page-hero, .close { position: relative; isolation: isolate; color: var(--color-seal-ink); background: var(--color-seal); }
+.hero::before, .page-hero::before, .close::before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none; background-image: radial-gradient(color-mix(in oklab, var(--color-ink) 16%, transparent) 1px, transparent 1.5px); background-size: 24px 24px; mask-image: linear-gradient(120deg, transparent 20%, var(--color-ink) 75%); }
+.hero .lead, .page-hero .lead, .close .lead, .page-hero .breadcrumbs, .page-hero .proof-item span, .page-hero .clients-label { color: var(--color-ink-2); }
+.hero .link-arrow:hover, .page-hero .link-arrow:hover, .close .link-arrow:hover { color: var(--color-ink); text-decoration-thickness: 2px; }
+.page-hero .hero-proof { border-top-color: color-mix(in oklab, var(--color-ink) 25%, transparent); }
+.page-hero .proof-link:hover strong { color: var(--color-ink-2); }
+.close h2 { font-size: var(--text-display); max-width: 16ch; }
+
+/* Servicios en filas: el lima entra al pasar el puntero */
+.rows a { position: relative; isolation: isolate; margin-inline: calc(var(--space-md) * -1); padding-inline: var(--space-md); border-radius: 12px; }
+.rows a::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: inherit; background: var(--color-seal); transform: scaleX(0); transform-origin: left; transition: transform var(--dur-long) var(--ease-out); }
+.rows a:hover::before, .rows a:focus-visible::before { transform: scaleX(1); }
+.rows a:hover p, .rows a:hover svg, .rows a:focus-visible p, .rows a:focus-visible svg { color: var(--color-ink-2); }
+.rows a:hover h3 { text-decoration: none; }
 
 @media (max-width: 64rem) {
   .hero-grid, .quiz, .tools, .contact-layout, .service-grid, .close-grid { grid-template-columns: minmax(0, 1fr); }
