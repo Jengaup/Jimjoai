@@ -182,7 +182,7 @@
         void countEl.offsetWidth;
         countEl.classList.add('is-bump');
       }
-      flow.style.setProperty('--fp', `${(Math.min(k, steps.length - 1) / (steps.length - 1)) * 100}%`);
+      flow.style.setProperty('--fp-scale', String(Math.min(k, steps.length - 1) / (steps.length - 1)));
       flow.classList.toggle('is-complete', k >= steps.length);
     };
     if (reduceMotion) {
@@ -234,7 +234,7 @@
       const checked = boxes.filter((b) => b.checked);
       const n = checked.length;
       const pct = boxes.length ? Math.round((n / boxes.length) * 100) : 0;
-      if (meter) meter.style.width = `${Math.max(n ? 8 : 0, pct)}%`;
+      if (meter) meter.style.setProperty('--meter', String(Math.max(n ? 8 : 0, pct) / 100));
       if (count) count.textContent = quizCopy.count.replace('{n}', n).replace('{t}', boxes.length);
       const band = n === 0 ? 'none' : n <= 2 ? 'low' : n <= 4 ? 'mid' : 'high';
       title.textContent = quizCopy.bands[band].title;
@@ -298,6 +298,9 @@
       picker.append(input, label);
     });
     renderSignals(false);
+    /* En celular la fila de tipos se desliza: deja visible el que está marcado */
+    const picked = picker.querySelector('input:checked + label');
+    if (picked && picker.scrollWidth > picker.clientWidth) picker.scrollLeft = picked.offsetLeft - picker.offsetLeft - 16;
   }
 
   /* Formulario de contacto (Web3Forms) */
